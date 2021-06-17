@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "type": "object",
+    "$id": "PrefetchBuilderSchema",
+    "title": "Prefetch builder",
+    "description": "Generate a script used to prefetch resources for an application",
+    "properties": {
+      "resourceTypes": {
+        "type": "object",
+        "description": "An object describing the resource types that should be prefetched.",
+        "default": {
+          "image": ["png", "jpg", "gif"],
+          "font": ["eot", "ttf", "woff", "woff2", "svg"],
+          "style": ["css"],
+          "script": ["js"],
+          "document": ["html"]
+        }
+      },
+      "crossorigin": {
+        "type": "boolean",
+        "description": "Flag that sets crossorigin attribute on links. If true it will be set for all prefetched resources.",
+        "default": true
+      }
+    },
+    "additionalProperties": false,
+    "required": []
+  }
+  
