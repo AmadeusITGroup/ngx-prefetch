@@ -20,9 +20,12 @@
         "type": "boolean",
         "description": "Flag that sets crossorigin attribute on links. If true it will be set for all prefetched resources.",
         "default": true
+      },
+      "targetBuild": {
+        "type": "string",
+        "description": "The target build where prefetch should be applied. Used for identifying the `outputPath` of the build. It will be mandatory in the next Major version."
       }
     },
     "additionalProperties": false,
-    "required": []
+    "required": ["targetBuild"]
   }
-  
