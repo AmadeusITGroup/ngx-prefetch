@@ -2,11 +2,15 @@
   "name": "my-ngsw-app",
   "version": "0.0.0",
   "scripts": {
-    "ng": "node --preserve-symlinks ./node_modules/@angular/cli/bin/ng",
+    "ng": "ng",
     "start": "yarn ng serve",
+    "start:prod": "yarn run build:prod && yarn run server",
+    "server": "http-server -p 8080 -c-1 dist",
     "build": "yarn ng build",
+    "build:prod": "yarn run clean && yarn ng build --configuration production",
     "watch": "yarn ng build --watch --configuration development",
-    "test": "yarn ng test"
+    "test": "yarn ng test",
+    "clean": "rimraf ./dist"
   },
   "private": true,
   "dependencies": {
@@ -18,6 +22,7 @@
     "@angular/platform-browser": "~12.1.0",
     "@angular/platform-browser-dynamic": "~12.1.0",
     "@angular/router": "~12.1.0",
+    "@angular/service-worker": "~12.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
@@ -28,12 +33,14 @@
     "@angular/compiler-cli": "~12.1.0",
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
+    "http-server": "^0.12.3",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "rimraf": "^3.0.2",
     "typescript": "~4.3.2"
   }
 }
