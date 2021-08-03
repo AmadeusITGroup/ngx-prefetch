@@ -37,5 +37,8 @@
   "devDependencies": {
     "@angular/service-worker": "^12.1.4",
     "@types/node": "^15.12.2"
-  }
+  },
+  "workspaces": [
+    "./examples/my-ngsw-app"
+  ]
 }
