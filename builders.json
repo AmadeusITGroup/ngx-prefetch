@@ -2,7 +2,7 @@
     "$schema": "./node_modules/@angular-devkit/architect/src/builders-schema.json",
     "builders": {
       "run": {
-        "implementation": "./dist",
+        "implementation": "./dist/",
         "schema": "./dist/schema.json",
         "description": "Prefetch builder"
       }

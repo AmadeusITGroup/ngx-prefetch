@@ -107,6 +107,12 @@
             ],
             "scripts": []
           }
+        },
+        "generate-prefetch": {
+          "builder": "ngx-prefetch:run",
+          "options": {
+              "targetBuild": "my-ngsw-app:build:production"
+          }
         }
       }
     }

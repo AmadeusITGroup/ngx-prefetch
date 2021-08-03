@@ -4,7 +4,7 @@
   "description": "Angular builder for prefetching resources before loading the application",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc -p ./tsconfig.json",
+    "build": "tsc -p ./tsconfig.json && cpx src/schema.json ./dist && cpx src/templates/* ./dist/templates",
     "test": "jest --config ./jest-ut.config.js",
     "lint": "eslint ./src"
   },
@@ -23,6 +23,7 @@
   "bugs": {
     "url": "https://github.com/vscaiceanu-1a/ngx-prefetch/issues"
   },
+  "builders": "builders.json",
   "homepage": "https://github.com/vscaiceanu-1a/ngx-prefetch#readme",
   "dependencies": {
     "@angular-devkit/architect": "^0.1200.4",
@@ -36,9 +37,7 @@
   },
   "devDependencies": {
     "@angular/service-worker": "^12.1.4",
-    "@types/node": "^15.12.2"
-  },
-  "workspaces": [
-    "./examples/my-ngsw-app"
-  ]
+    "@types/node": "^15.12.2",
+    "cpx": "^1.5.0"
+  }
 }
