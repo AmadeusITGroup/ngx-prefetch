@@ -3,6 +3,7 @@ import {AssetGroup as NgAssetGroup} from '@angular/service-worker/config';
 import * as commentJson from 'comment-json';
 import * as fs from 'fs';
 import * as path from 'path';
+import * as webpack from 'webpack';
 
 import {PrefetchBuilderSchema} from './schema';
 
@@ -70,9 +71,32 @@ export default createBuilder<PrefetchBuilderSchema>(async (options, context): Pr
     .replace('prefetchConfig;', 'prefetchConfig = ' + JSON.stringify(options) + ';');
 
   context.reportProgress(3, STEP_NUMBER, 'Write prefetch js script.');
-  fs.writeFileSync(path.join(process.cwd(), prodBuildOutputPath, 'ngxPrefetch.js'), prefetchJs);
+  const tempOutputPath = path.join(process.cwd(), prodBuildOutputPath, 'tempPrefetch.js');
+  fs.writeFileSync(tempOutputPath, prefetchJs);
 
-  return {
-    success: true
-  };
+  context.reportProgress(4, STEP_NUMBER, 'Webpack');
+  const compiler = webpack({
+    mode: options.production ? "production" : "none",
+    entry: tempOutputPath,
+    output: {
+      path: path.join(process.cwd(), prodBuildOutputPath),
+      filename: 'ngxPrefetch.js'
+    },
+    devtool: options.production ? "source-map" : false
+  });
+  return new Promise((resolve) => {
+    compiler.run((err, stats) => {
+      fs.unlinkSync(tempOutputPath);
+      if (err || stats.hasErrors()) {
+        resolve({
+          success: false,
+          error: `Webpack tanspilation failed. ${err || stats.hasErrors()}`
+        });
+      } else {
+        resolve({
+          success: true
+        });
+      }
+    });
+  });
 });

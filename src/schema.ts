@@ -10,4 +10,7 @@ export interface PrefetchBuilderSchema extends JsonObject {
 
   /** Flag that sets crossorigin attribute on links. If true it will be set for all prefetched resources. */
   crossorigin: boolean;
+
+  /** Flag for creating a production (minified) version of the js file or a development one. */
+  production: boolean;
 }
