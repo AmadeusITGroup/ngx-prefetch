@@ -204,6 +204,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/mustache@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "@types/mustache@npm:4.1.2"
+  checksum: 6dc61434e09d3b51cdc096c5f79ab9cb74609e9764eaa69c0ab367cfc2b1bda2cb65e420fb9ec8201376c046c9b1012017e704698f9dd7ac594277a307083b6e
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:*":
   version: 16.4.13
   resolution: "@types/node@npm:16.4.13"
@@ -2827,6 +2834,15 @@ fsevents@^1.0.0:
   languageName: node
   linkType: hard
 
+"mustache@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "mustache@npm:4.2.0"
+  bin:
+    mustache: bin/mustache
+  checksum: 55540771ed2ca0a72d44c747bd57531ca70fd54c4b420eee580ef5ea021101359e679fbadf40f467e69be2b9086fa6a7be8613e91261fa072d5e321f66eaa748
+  languageName: node
+  linkType: hard
+
 "nan@npm:^2.12.1":
   version: 2.14.2
   resolution: "nan@npm:2.14.2"
@@ -2876,13 +2892,16 @@ fsevents@^1.0.0:
     "@angular-devkit/architect": ^0.1200.4
     "@angular-devkit/core": ^12.0.4
     "@angular/service-worker": ^12.1.4
+    "@types/mustache": ^4.1.2
     "@types/node": ^15.12.2
     "@typescript-eslint/eslint-plugin": ^4.27.0
     "@typescript-eslint/parser": ^4.27.0
     comment-json: ^4.1.0
     cpx: ^1.5.0
     eslint: ^7.28.0
+    mustache: ^4.2.0
     path: ^0.12.7
+    rimraf: ^3.0.2
     typescript: ^4.3.3
     webpack: ^5.50.0
   languageName: unknown

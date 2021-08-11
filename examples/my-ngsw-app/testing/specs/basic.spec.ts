@@ -1,9 +1,16 @@
 import { test, expect } from '@playwright/test';
 
-const networkConditions = {
+const goodNetworkConditions = {
   offline: false,
-  downloadThroughput: 25 * 1000,
-  uploadThroughput: 25 * 1000,
+  downloadThroughput: -1,
+  uploadThroughput: -1,
+  latency: 0
+};
+
+const badNetworkConditions = {
+  offline: false,
+  downloadThroughput: 10 * 1000,
+  uploadThroughput: 10 * 1000,
   latency: 0
 };
 
@@ -11,12 +18,15 @@ let prefetchLoadDuration: number;
 
 test.describe('My app', () => {
   test('loads fast with prefetch mechanism', async ({ page }) => {
+    const client = await page.context().newCDPSession(page);
+    await client.send('Network.emulateNetworkConditions', goodNetworkConditions);
+
     await page.goto('http://localhost:8080/prefetch.html');
     await page.waitForURL('http://localhost:8080/prefetch.html', {
       waitUntil: 'networkidle'
     });
-    const client = await page.context().newCDPSession(page);
-    await client.send('Network.emulateNetworkConditions', networkConditions);
+    await expect(page.locator('link')).toHaveCount(15);
+    await client.send('Network.emulateNetworkConditions', badNetworkConditions);
     const [request] = await Promise.all([
       page.waitForEvent('requestfinished'),
       page.click('a:has-text("Launch the app")')
@@ -31,7 +41,7 @@ test.describe('My app', () => {
   test('takes a while to load on bad network', async ({ page }) => {
     const client = await page.context().newCDPSession(page);
 
-    await client.send('Network.emulateNetworkConditions', networkConditions);
+    await client.send('Network.emulateNetworkConditions', badNetworkConditions);
     const [request] = await Promise.all([
       page.waitForEvent('requestfinished'),
       page.goto('http://localhost:8080')

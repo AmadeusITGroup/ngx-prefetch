@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc -p ./tsconfig.json && cpx src/schema.json ./dist && cpx src/templates/* ./dist/templates",
     "test": "jest --config ./jest-ut.config.js",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "clean": "rimraf ./dist"
   },
   "repository": {
     "type": "git",
@@ -32,13 +33,16 @@
     "@typescript-eslint/parser": "^4.27.0",
     "comment-json": "^4.1.0",
     "eslint": "^7.28.0",
+    "mustache": "^4.2.0",
     "path": "^0.12.7",
     "typescript": "^4.3.3",
     "webpack": "^5.50.0"
   },
   "devDependencies": {
     "@angular/service-worker": "^12.1.4",
+    "@types/mustache": "^4.1.2",
     "@types/node": "^15.12.2",
-    "cpx": "^1.5.0"
+    "cpx": "^1.5.0",
+    "rimraf": "^3.0.2"
   }
 }

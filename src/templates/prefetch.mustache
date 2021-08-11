@@ -1,5 +1,5 @@
 (function() {
-  var prefetchConfig;
+  var prefetchConfig = {{{prefetchConfig}}};
   function getResType(extension) {
     if (prefetchConfig && prefetchConfig.resourceTypes) {
       for (var key in prefetchConfig.resourceTypes) {
@@ -22,10 +22,11 @@
     document.head.appendChild(res);
   }
 
-  var resList = [null];
-  var fullPath = '{STATICS_FULL_PATH}';
+  var resList = {{{resourceArray}}};
+  var fullPath = '{{{staticsFullPath}}}';
+  var shamefulString = 'STATICS_FULL_PATH';
   // for testing
-  if (fullPath === '{' + 'STATICS_FULL_PATH' + '}') { fullPath = '.'; }
+  if (fullPath === `{${shamefulString}}`) { fullPath = '.'; }
   resList.forEach(function(resource) {
     if (typeof resource === 'string') {
       var splitRes = resource.split('.');
