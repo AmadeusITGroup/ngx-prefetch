@@ -16,6 +16,7 @@ A prerequiste for the script is to have [Angular Service Worker](https://angular
 
   - `crossorigin` Flag that sets crossorigin attribute on links. If true it will be set for all prefetched resources.
 
+  - `production` Flag for creating a production (minified) version of the js file or a development one.
 ## Usage
 
 [`package.json`]
@@ -52,7 +53,8 @@ A prerequiste for the script is to have [Angular Service Worker](https://angular
             "script": ["js"],
             "document": ["html"]
         },
-        "crossorigin": true
+        "crossorigin": true,
+        "production": false
     }
 },
 ```
