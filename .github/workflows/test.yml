@@ -2,7 +2,6 @@ name: Test
 
 on:
   push:
-  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -27,8 +26,17 @@ jobs:
             ${{ runner.os }}-
       - name: Install
         run: yarn --immutable
-
       - name: Build
         run: yarn build
       - name: Lint
         run: yarn lint
+      - name: Install, build and start demo app
+        run: |
+          cd examples/my-ngsw-app
+          npm ci
+          npm run start:prod:ci
+      - name: Playwright
+        run: |
+          cd examples/my-ngsw-app
+          npx playwright install chromium
+          npm run test:e2e
