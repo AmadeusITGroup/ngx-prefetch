@@ -19,6 +19,10 @@
     "prefetch",
     "service worker"
   ],
+  "engines": {
+    "npm": "please-use-yarn",
+    "yarn": ">= 2.4.2"
+  },
   "author": "Victor Scaiceanu",
   "license": "MIT",
   "bugs": {
