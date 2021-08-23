@@ -1,5 +1,4 @@
 import {BuilderOutput, createBuilder, Target} from '@angular-devkit/architect';
-import {AssetGroup as NgAssetGroup} from '@angular/service-worker/config';
 import * as commentJson from 'comment-json';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -13,13 +12,16 @@ export * from './schema';
 /**
  * AssetGroup format found in the ngsw.json
  */
-interface AssetGroup extends NgAssetGroup {
-  urls: string;
+export interface AssetGroup {
+  urls: string[];
+  installMode?: 'prefetch' | 'lazy';
+  [x: string]: unknown;
 }
+
 /**
  * @param json
  */
-function getResArray(assetGroups: AssetGroup[]) {
+export function getResArray(assetGroups: AssetGroup[]): string[] {
   const resArray: string[] = [];
   assetGroups.filter((assetGroup) => assetGroup.installMode === 'prefetch')
     .forEach((assetGroup) => resArray.push(...assetGroup.urls));
