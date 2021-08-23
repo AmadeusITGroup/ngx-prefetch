@@ -1,0 +1,22 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+# https://github.com/dependabot/dependabot-core/issues/1297
+#  - package-ecosystem: 'yarn'
+#    directory: '/'
+#    schedule:
+#      interval: 'weekly'
+#    versioning-strategy: increase
+#    commit-message:
+#      prefix: 'chore(deps)'
+  - package-ecosystem: 'npm'
+    directory: '/examples/my-ngsw-app'
+    schedule:
+      interval: 'weekly'
+    versioning-strategy: increase
+    commit-message:
+      prefix: 'chore(deps)'
