@@ -17,6 +17,8 @@ A prerequiste for the script is to have [Angular Service Worker](https://angular
   - `crossorigin` Flag that sets crossorigin attribute on links. If true it will be set for all prefetched resources.
 
   - `production` Flag for creating a production (minified) version of the js file or a development one.
+
+  - `staticsFullPath` By default the prefetched resources are hosted next to the `ngxPrefetch.js` file, on the same server. If it is not the case, you can configure the full path of the resources that will be prefetched. (ex: https://my-web-app.com/path/to/my-app/).
 ## Usage
 
 [`package.json`]
@@ -54,7 +56,8 @@ A prerequiste for the script is to have [Angular Service Worker](https://angular
             "document": ["html"]
         },
         "crossorigin": true,
-        "production": false
+        "production": false,
+        "staticsFullPath": "https://my-web-app.com/path/to/my-app/"
     }
 },
 ```

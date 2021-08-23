@@ -4,6 +4,7 @@ import * as commentJson from 'comment-json';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as webpack from 'webpack';
+import * as Mustache from 'mustache';
 
 import {PrefetchBuilderSchema} from './schema';
 
@@ -65,10 +66,13 @@ export default createBuilder<PrefetchBuilderSchema>(async (options, context): Pr
   const resourceArray = getResArray(swJson.assetGroups);
 
   context.reportProgress(2, STEP_NUMBER, 'Read prefetch template file.');
-  const prefetchTemplate = fs.readFileSync(path.join(__dirname, 'templates', 'prefetch.tpl.js'), {encoding: 'utf-8'});
-  const prefetchJs = prefetchTemplate
-    .replace('[null]', commentJson.stringify(resourceArray))
-    .replace('prefetchConfig;', 'prefetchConfig = ' + JSON.stringify(options) + ';');
+  const prefetchTemplate = fs.readFileSync(path.join(__dirname, 'templates', 'prefetch.mustache'), {encoding: 'utf-8'});
+  const variables = {
+    resourceArray: commentJson.stringify(resourceArray),
+    prefetchConfig: JSON.stringify(options),
+    staticsFullPath: options.staticsFullPath
+  }
+  const prefetchJs = Mustache.render(prefetchTemplate, variables);
 
   context.reportProgress(3, STEP_NUMBER, 'Write prefetch js script.');
   const tempOutputPath = path.join(process.cwd(), prodBuildOutputPath, 'tempPrefetch.js');

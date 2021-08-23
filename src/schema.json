@@ -23,12 +23,17 @@
       },
       "targetBuild": {
         "type": "string",
-        "description": "The target build where prefetch should be applied. Used for identifying the `outputPath` of the build. It will be mandatory in the next Major version."
+        "description": "The target build where prefetch should be applied. Used for identifying the `outputPath` of the build."
       },
       "production": {
         "type": "boolean",
         "description": "Flag for creating a production (minified) version of the js file or a development one.",
         "default": true
+      },
+      "staticsFullPath": {
+        "type": "string",
+        "description": "By default the prefetched resources are hosted next to the `ngxPrefetch.js` file, on the same server. If it is not the case, you can configure the full path of the resources that will be prefetched.",
+        "default": "{STATICS_FULL_PATH}"
       }
     },
     "additionalProperties": false,

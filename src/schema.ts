@@ -13,4 +13,7 @@ export interface PrefetchBuilderSchema extends JsonObject {
 
   /** Flag for creating a production (minified) version of the js file or a development one. */
   production: boolean;
+
+  /** By default the prefetched resources are hosted next to the `ngxPrefetch.js` file, on the same server. If it is not the case, you can configure the full path of the resources that will be prefetched. */
+  staticsFullPath: string;
 }
