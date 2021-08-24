@@ -1,4 +1,4 @@
-name: Test
+name: CI
 
 on:
   push:
@@ -28,6 +28,8 @@ jobs:
         run: yarn --immutable
       - name: Build
         run: yarn build
+      - name: Unit Tests
+        run: yarn test
       - name: Lint
         run: yarn lint
       - name: Install, build and start demo app
@@ -35,7 +37,7 @@ jobs:
           cd examples/my-ngsw-app
           npm ci
           npm run start:prod:ci
-      - name: Playwright
+      - name: End to End tests
         run: |
           cd examples/my-ngsw-app
           npx playwright install chromium
