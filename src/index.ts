@@ -1,4 +1,4 @@
-import {BuilderOutput, createBuilder, Target} from '@angular-devkit/architect';
+import {BuilderContext, BuilderOutput, createBuilder, Target} from '@angular-devkit/architect';
 import * as commentJson from 'comment-json';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -26,6 +26,21 @@ export function getResArray(assetGroups: AssetGroup[]): string[] {
   assetGroups.filter((assetGroup) => assetGroup.installMode === 'prefetch')
     .forEach((assetGroup) => resArray.push(...assetGroup.urls));
   return resArray;
+}
+
+/**
+ * @param options prefetch Builder Options
+ * @param allowedOptions list of allowed options for Builder configuration
+ */
+export function filterOptions(options: PrefetchBuilderSchema, allowedOptions: string[]) {
+  return Object.keys(options)
+    .filter(key => allowedOptions.includes(key))
+    .reduce((obj, key) => {
+      return {
+        ...obj,
+        [key]: options[key]
+      };
+    }, {});
 }
 
 /** Maximum number of steps */
@@ -56,7 +71,15 @@ export default createBuilder<PrefetchBuilderSchema>(async (options, context): Pr
   const prodBuildOutputPath = targetBuildOptions.outputPath;
 
   context.reportProgress(1, STEP_NUMBER, 'Read ngsw.json');
-  const swJsonString = fs.readFileSync(path.join(process.cwd(), prodBuildOutputPath, 'ngsw.json'), {encoding: 'utf-8'});
+  let swJsonString;
+  try {
+    swJsonString = fs.readFileSync(path.join(process.cwd(), prodBuildOutputPath, 'ngsw.json'), {encoding: 'utf-8'});
+  } catch (error) {
+    return {
+      success: false,
+      error
+    }
+  }
   const swJson = commentJson.parse(swJsonString);
 
   if (!swJson.assetGroups || swJson.assetGroups.length <= 0) {
@@ -69,9 +92,10 @@ export default createBuilder<PrefetchBuilderSchema>(async (options, context): Pr
 
   context.reportProgress(2, STEP_NUMBER, 'Read prefetch template file.');
   const prefetchTemplate = fs.readFileSync(path.join(__dirname, 'templates', 'prefetch.mustache'), {encoding: 'utf-8'});
+  const configOptions = ['crossorigin', 'resourceTypes'];
   const variables = {
     resourceArray: commentJson.stringify(resourceArray),
-    prefetchConfig: JSON.stringify(options),
+    prefetchConfig: JSON.stringify(filterOptions(options, configOptions)),
     staticsFullPath: options.staticsFullPath
   };
   const prefetchJs = Mustache.render(prefetchTemplate, variables);

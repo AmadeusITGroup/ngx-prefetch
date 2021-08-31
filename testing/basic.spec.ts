@@ -1,4 +1,4 @@
-import {getResArray} from '../src';
+import {filterOptions, getResArray} from '../src';
 import {lazyAndPrefetchAssetGroups, prefetchInputAssetGroup} from './mocks';
 
 describe('Prefetch builder', () => {
@@ -37,6 +37,36 @@ describe('Prefetch builder', () => {
         '/styles.31d6cfe0d16ae931b73c.css'
       ];
       expect(getResArray(lazyAndPrefetchAssetGroups)).toEqual(expectedArray);
+    });
+  });
+
+  describe('filterOptions', () => {
+    test('should filter out builder options not used in prefetch.js config', () => {
+      const inputOptions = {
+        targetBuild: 'my-ngsw-app:build:production',
+        resourceTypes: {
+          image: [ 'png', 'jpg', 'gif' ],
+          font: [ 'eot', 'ttf', 'woff', 'woff2', 'svg' ],
+          style: [ 'css' ],
+          script: [ 'js' ],
+          document: [ 'html' ]
+        },
+        crossorigin: true,
+        production: true,
+        staticsFullPath: '{STATICS_FULL_PATH}'
+      };
+
+      const expectedBuilderConfig = {
+        resourceTypes: {
+          image: [ 'png', 'jpg', 'gif' ],
+          font: [ 'eot', 'ttf', 'woff', 'woff2', 'svg' ],
+          style: [ 'css' ],
+          script: [ 'js' ],
+          document: [ 'html' ]
+        },
+        crossorigin: true
+      };
+      expect(filterOptions(inputOptions, ['crossorigin', 'resourceTypes'])).toEqual(expectedBuilderConfig);
     });
   });
 });
