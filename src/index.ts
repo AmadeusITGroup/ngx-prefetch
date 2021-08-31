@@ -73,7 +73,7 @@ export default createBuilder<PrefetchBuilderSchema>(async (options, context): Pr
     resourceArray: commentJson.stringify(resourceArray),
     prefetchConfig: JSON.stringify(options),
     staticsFullPath: options.staticsFullPath
-  }
+  };
   const prefetchJs = Mustache.render(prefetchTemplate, variables);
 
   context.reportProgress(3, STEP_NUMBER, 'Write prefetch js script.');

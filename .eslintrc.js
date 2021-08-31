@@ -9,20 +9,12 @@ module.exports = {
     ],
     extends: [
       'eslint:recommended',
-      'plugin:@typescript-eslint/recommended',
+      'plugin:@typescript-eslint/recommended'
     ],
     overrides: [
       {
         files: [
-          'src/templates/prefetch.tpl.js'
-        ],
-        env: {
-          browser: true
-        }
-      },
-      {
-        files: [
-          'src/**/*.spec.ts'
+          'testing/**/*.spec.ts'
         ],
         env: {
           es6: true,
