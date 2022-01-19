@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vscaiceanu-1a/ngx-prefetch.git"
+    "url": "git+https://github.com/AmadeusITGroup/ngx-prefetch.git"
   },
   "keywords": [
     "angular",
@@ -23,13 +23,13 @@
     "npm": "please-use-yarn",
     "yarn": ">= 2.4.2"
   },
-  "author": "Victor Scaiceanu",
+  "author": "Victor Scaiceanu <victor.scaiceanu@amadeus.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vscaiceanu-1a/ngx-prefetch/issues"
+    "url": "https://github.com/AmadeusITGroup/ngx-prefetch/issues"
   },
   "builders": "builders.json",
-  "homepage": "https://github.com/vscaiceanu-1a/ngx-prefetch#readme",
+  "homepage": "https://github.com/AmadeusITGroup/ngx-prefetch#readme",
   "dependencies": {
     "@angular-devkit/architect": "^0.1200.4",
     "@angular-devkit/core": "^12.0.4",
