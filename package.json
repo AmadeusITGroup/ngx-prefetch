@@ -1,6 +1,6 @@
 {
-  "name": "ngx-prefetch",
-  "version": "12.0.0",
+  "name": "@o3r/ngx-prefetch",
+  "version": "0.0.1",
   "description": "Angular builder for prefetching resources before loading the application",
   "main": "dist/index.js",
   "scripts": {
@@ -18,6 +18,10 @@
     "builder",
     "prefetch",
     "service worker"
+  ],
+  "files": [
+    "dist/",
+    "builders.json"
   ],
   "engines": {
     "npm": "please-use-yarn",
