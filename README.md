@@ -34,7 +34,7 @@ A prerequiste for the script is to have [Angular Service Worker](https://angular
 
 ```json
 "generate-prefetch": {
-    "builder": "@o3r/ngx-prefetch",
+    "builder": "@o3r/ngx-prefetch:run",
     "options": {
         "targetBuild": "my-app:build:production"
     }
@@ -45,7 +45,7 @@ A prerequiste for the script is to have [Angular Service Worker](https://angular
 
 ```json
 "generate-prefetch": {
-    "builder": "@o3r/ngx-prefetch",
+    "builder": "@o3r/ngx-prefetch:run",
     "options": {
         "targetBuild": "my-app:build:production",
         "resourceTypes": {

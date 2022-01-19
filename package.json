@@ -1,6 +1,6 @@
 {
   "name": "@o3r/ngx-prefetch",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Angular builder for prefetching resources before loading the application",
   "main": "dist/index.js",
   "scripts": {
@@ -23,10 +23,6 @@
     "dist/",
     "builders.json"
   ],
-  "engines": {
-    "npm": "please-use-yarn",
-    "yarn": ">= 2.4.2"
-  },
   "author": "Victor Scaiceanu <victor.scaiceanu@amadeus.com>",
   "license": "MIT",
   "bugs": {
