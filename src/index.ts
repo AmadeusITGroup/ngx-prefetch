@@ -1,4 +1,5 @@
-import {BuilderContext, BuilderOutput, createBuilder, Target} from '@angular-devkit/architect';
+import type {BuilderOutput, Target} from '@angular-devkit/architect';
+import {createBuilder} from '@angular-devkit/architect';
 import * as commentJson from 'comment-json';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -32,7 +33,7 @@ export function getResArray(assetGroups: AssetGroup[]): string[] {
  * @param options prefetch Builder Options
  * @param allowedOptions list of allowed options for Builder configuration
  */
-export function filterOptions(options: PrefetchBuilderSchema, allowedOptions: string[]) {
+export function filterOptions(options: PrefetchBuilderSchema, allowedOptions: string[]): Partial<PrefetchBuilderSchema> {
   return Object.keys(options)
     .filter(key => allowedOptions.includes(key))
     .reduce((obj, key) => {
