@@ -109,7 +109,7 @@
           }
         },
         "generate-prefetch": {
-          "builder": "ngx-prefetch:run",
+          "builder": "@o3r/ngx-prefetch:run",
           "options": {
               "targetBuild": "my-ngsw-app:build:production"
           }
