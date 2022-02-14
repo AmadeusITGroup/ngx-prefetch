@@ -75,7 +75,7 @@ export default createBuilder<PrefetchBuilderSchema>(async (options, context): Pr
   let swJsonString;
   try {
     swJsonString = fs.readFileSync(path.join(process.cwd(), prodBuildOutputPath, 'ngsw.json'), {encoding: 'utf-8'});
-  } catch (error) {
+  } catch (error: any) {
     return {
       success: false,
       error
