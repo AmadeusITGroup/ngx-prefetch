@@ -28,7 +28,7 @@
       "production": {
         "type": "boolean",
         "description": "Flag for creating a production (minified) version of the js file or a development one.",
-        "default": true
+        "default": false
       },
       "staticsFullPath": {
         "type": "string",
