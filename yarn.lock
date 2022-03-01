@@ -1038,7 +1038,7 @@ __metadata:
     "@angular-devkit/architect": ^0.1302.3
     "@angular-devkit/core": ^13.2.3
     "@angular/service-worker": ^13.2.2
-    "@types/jest": ^27.4.0
+    "@types/jest": 27.4.0
     "@types/mustache": ^4.1.2
     "@types/node": ^15.12.2
     "@typescript-eslint/eslint-plugin": ^4.27.0
@@ -1183,7 +1183,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^27.4.0":
+"@types/jest@npm:27.4.0":
   version: 27.4.0
   resolution: "@types/jest@npm:27.4.0"
   dependencies:
