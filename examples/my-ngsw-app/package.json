@@ -41,7 +41,7 @@
     "@types/node": "^17.0.8",
     "cpy-cli": "^3.1.1",
     "http-server": "^14.1.0",
-    "jasmine-core": "~4.0.0",
+    "jasmine-core": "~4.0.1",
     "karma": "~6.3.11",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.2.0",
