@@ -43,17 +43,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular/service-worker@npm:^13.2.2":
-  version: 13.2.2
-  resolution: "@angular/service-worker@npm:13.2.2"
+"@angular/service-worker@npm:13.2.4":
+  version: 13.2.4
+  resolution: "@angular/service-worker@npm:13.2.4"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/common": 13.2.2
-    "@angular/core": 13.2.2
+    "@angular/common": 13.2.4
+    "@angular/core": 13.2.4
   bin:
     ngsw-config: ngsw-config.js
-  checksum: b1a8024860cae9809cef06e31eaa4dd3fd06b2d94cf2a8f716a5f9af000583873a12bed2907690b67c9432f36a0ff9e7f05302f356664f350c0d316658ba7053
+  checksum: 323983f617d63835caf68b401d86d2fa65d6e3a07220f9712c339779a9e2684c33cafadc252d00e1094be9cd713911c5969376275d04c79cf14c0d458218e38e
   languageName: node
   linkType: hard
 
@@ -1037,7 +1037,7 @@ __metadata:
   dependencies:
     "@angular-devkit/architect": ^0.1302.3
     "@angular-devkit/core": ^13.2.3
-    "@angular/service-worker": ^13.2.2
+    "@angular/service-worker": 13.2.4
     "@types/jest": ^27.4.0
     "@types/mustache": ^4.1.2
     "@types/node": ^15.12.2
