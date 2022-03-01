@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.2.5",
-    "@angular/cli": "~13.2.3",
+    "@angular/cli": "~13.2.5",
     "@angular/compiler-cli": "~13.2.4",
     "@o3r/ngx-prefetch": "../..",
     "@playwright/test": "^1.19.2",
