@@ -39,7 +39,7 @@
     "eslint": "^7.28.0",
     "mustache": "^4.2.0",
     "path": "^0.12.7",
-    "typescript": "~4.5.4",
+    "typescript": "~4.6.0",
     "webpack": "^5.50.0"
   },
   "devDependencies": {
