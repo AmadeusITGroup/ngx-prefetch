@@ -33,8 +33,8 @@
   "dependencies": {
     "@angular-devkit/architect": "^0.1302.3",
     "@angular-devkit/core": "^13.2.3",
-    "@typescript-eslint/eslint-plugin": "^4.27.0",
-    "@typescript-eslint/parser": "^4.27.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
     "comment-json": "^4.1.0",
     "eslint": "^7.28.0",
     "mustache": "^4.2.0",
