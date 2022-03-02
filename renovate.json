@@ -1,5 +1,25 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
+    "config:base",
+    "group:allNonMajor",
+    "group:monorepos",
+    "group:recommended",
+    "group:test",
+    "group:linters"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "@angular/core"
+      ],
+      "postUpgradeTasks": {
+        "commands": [
+          "yarn install",
+          "yarn ng update {{{depName}}} --from={{{currentVersion}}} --to={{{newVersion}}} --migrate-only --allow-dirty --force"
+        ],
+        "executionMode": "branch"
+      }
+    }
   ]
 }
