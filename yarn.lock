@@ -1040,7 +1040,7 @@ __metadata:
     "@angular/service-worker": ^13.2.2
     "@types/jest": ^27.4.0
     "@types/mustache": ^4.1.2
-    "@types/node": ^15.12.2
+    "@types/node": ^16.0.0
     "@typescript-eslint/eslint-plugin": ^4.27.0
     "@typescript-eslint/parser": ^4.27.0
     comment-json: ^4.1.0
@@ -1221,10 +1221,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^15.12.2":
-  version: 15.14.5
-  resolution: "@types/node@npm:15.14.5"
-  checksum: ac8f9c5cff26fa4a9d1162a1fe858c5ffc5aff55259e3d9adb9e07178e5fe5a642948c32f61cb1f1798b89cbc63a7f58dad1943c76a0bb240264f14c78cbf648
+"@types/node@npm:^16.0.0":
+  version: 16.11.26
+  resolution: "@types/node@npm:16.11.26"
+  checksum: 57757caaba3f0d95de82198cb276a1002c49b710108c932a1d02d7c91ff2fa57cfe2dd19fde60853b6dd90b0964b3cf35557981d2628e20aed6a909057aedfe6
   languageName: node
   linkType: hard
 
