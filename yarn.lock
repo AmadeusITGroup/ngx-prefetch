@@ -14,17 +14,36 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/architect@npm:^0.1302.3":
-  version: 0.1302.3
-  resolution: "@angular-devkit/architect@npm:0.1302.3"
+"@angular-devkit/architect@npm:^0.1303.0":
+  version: 0.1303.0
+  resolution: "@angular-devkit/architect@npm:0.1303.0"
   dependencies:
-    "@angular-devkit/core": 13.2.3
+    "@angular-devkit/core": 13.3.0
     rxjs: 6.6.7
-  checksum: c9b85a71b5765bd319ff474825a18a510bfb0aeb8f632cdab258dc8fbba9a79b9db5c1802312f9b446614190c283d6527474dd30ca83405ce429ed0c559a847e
+  checksum: e5dea9aa059dca9af8d6eaa96af646b97305ddfab4e5f3a13ef1d52c0612c0ca90fcf149d128381038fc021deadad7b36c10de298c63aab76c1592cdcec16984
   languageName: node
   linkType: hard
 
-"@angular-devkit/core@npm:13.2.3, @angular-devkit/core@npm:^13.2.3":
+"@angular-devkit/core@npm:13.3.0":
+  version: 13.3.0
+  resolution: "@angular-devkit/core@npm:13.3.0"
+  dependencies:
+    ajv: 8.9.0
+    ajv-formats: 2.1.1
+    fast-json-stable-stringify: 2.1.0
+    magic-string: 0.25.7
+    rxjs: 6.6.7
+    source-map: 0.7.3
+  peerDependencies:
+    chokidar: ^3.5.2
+  peerDependenciesMeta:
+    chokidar:
+      optional: true
+  checksum: 131f8462b8be0a42dcac6c9369cc4b927fa3febd8cbe7099c969fc4ca816334ca9e5970a8fe1353e95b40fe35e8c5b96a759d9f0a3a8864fe4a20df9a8ec3d8b
+  languageName: node
+  linkType: hard
+
+"@angular-devkit/core@npm:^13.2.3":
   version: 13.2.3
   resolution: "@angular-devkit/core@npm:13.2.3"
   dependencies:
@@ -1035,7 +1054,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@o3r/ngx-prefetch@workspace:."
   dependencies:
-    "@angular-devkit/architect": ^0.1302.3
+    "@angular-devkit/architect": ^0.1303.0
     "@angular-devkit/core": ^13.2.3
     "@angular/service-worker": ^13.2.2
     "@types/jest": ^27.4.0
