@@ -24,7 +24,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/core@npm:13.3.0":
+"@angular-devkit/core@npm:13.3.0, @angular-devkit/core@npm:^13.3.0":
   version: 13.3.0
   resolution: "@angular-devkit/core@npm:13.3.0"
   dependencies:
@@ -43,36 +43,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/core@npm:^13.2.3":
-  version: 13.2.3
-  resolution: "@angular-devkit/core@npm:13.2.3"
-  dependencies:
-    ajv: 8.9.0
-    ajv-formats: 2.1.1
-    fast-json-stable-stringify: 2.1.0
-    magic-string: 0.25.7
-    rxjs: 6.6.7
-    source-map: 0.7.3
-  peerDependencies:
-    chokidar: ^3.5.2
-  peerDependenciesMeta:
-    chokidar:
-      optional: true
-  checksum: 523671d26806046aa2e81aac45dbd2a18afdd4a8803ad9bdf5883e818357dcbd31174a1439fb1c7dc1b1dbe5ce885b385cb03dae6e7034c87b3d4f58b25a5c88
-  languageName: node
-  linkType: hard
-
-"@angular/service-worker@npm:^13.2.2":
-  version: 13.2.2
-  resolution: "@angular/service-worker@npm:13.2.2"
+"@angular/service-worker@npm:^13.3.0":
+  version: 13.3.0
+  resolution: "@angular/service-worker@npm:13.3.0"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
-    "@angular/common": 13.2.2
-    "@angular/core": 13.2.2
+    "@angular/common": 13.3.0
+    "@angular/core": 13.3.0
   bin:
     ngsw-config: ngsw-config.js
-  checksum: b1a8024860cae9809cef06e31eaa4dd3fd06b2d94cf2a8f716a5f9af000583873a12bed2907690b67c9432f36a0ff9e7f05302f356664f350c0d316658ba7053
+  checksum: 3ae649b71c864535aa2752ddca7e8feefd66a947b74d6a396e09ce4d69217a1c6385f329a97a8e56b6a971bf7fc66154d478cb6d215187527c4e32ae54758d7d
   languageName: node
   linkType: hard
 
@@ -1055,8 +1036,8 @@ __metadata:
   resolution: "@o3r/ngx-prefetch@workspace:."
   dependencies:
     "@angular-devkit/architect": ^0.1303.0
-    "@angular-devkit/core": ^13.2.3
-    "@angular/service-worker": ^13.2.2
+    "@angular-devkit/core": ^13.3.0
+    "@angular/service-worker": ^13.3.0
     "@types/jest": ^27.4.0
     "@types/mustache": ^4.1.2
     "@types/node": ^16.0.0
