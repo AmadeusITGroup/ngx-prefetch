@@ -43,7 +43,6 @@
     "webpack": "^5.50.0"
   },
   "devDependencies": {
-    "@angular/service-worker": "^13.3.0",
     "@types/jest": "^27.4.0",
     "@types/mustache": "^4.1.2",
     "@types/node": "^16.0.0",
