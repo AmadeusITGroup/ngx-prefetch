@@ -75,6 +75,7 @@ export default createBuilder<PrefetchBuilderSchema>(async (options, context): Pr
   let swJsonString;
   try {
     swJsonString = fs.readFileSync(path.join(process.cwd(), prodBuildOutputPath, 'ngsw.json'), {encoding: 'utf-8'});
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     return {
       success: false,
