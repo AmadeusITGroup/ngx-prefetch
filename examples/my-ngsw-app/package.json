@@ -37,7 +37,7 @@
     "@angular/compiler-cli": "~13.3.0",
     "@o3r/ngx-prefetch": "../..",
     "@playwright/test": "^1.20.2",
-    "@types/jasmine": "~4.0.0",
+    "@types/jasmine": "~4.0.2",
     "@types/node": "^17.0.23",
     "http-server": "^14.1.0",
     "jasmine-core": "~4.0.1",
