@@ -4,7 +4,7 @@
   "description": "Angular builder for prefetching resources before loading the application",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc -p ./tsconfig.json && cpx src/schema.json ./dist && cpx src/templates/* ./dist/templates",
+    "build": "tsc -p ./tsconfig.json && copyfiles src/schema.json ./dist --up 1 && copyfiles src/templates/* ./dist --up 1",
     "test": "jest",
     "lint": "eslint ./src",
     "clean": "rimraf ./dist"
@@ -46,7 +46,7 @@
     "@types/jest": "^27.4.0",
     "@types/mustache": "^4.1.2",
     "@types/node": "^16.0.0",
-    "cpx": "^1.5.0",
+    "copyfiles": "^2.4.1",
     "jest": "^27.5.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^27.1.3"
