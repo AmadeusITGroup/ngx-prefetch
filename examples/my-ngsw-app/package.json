@@ -38,7 +38,7 @@
     "@o3r/ngx-prefetch": "../..",
     "@playwright/test": "^1.21.1",
     "@types/jasmine": "~4.0.3",
-    "@types/node": "^17.0.26",
+    "@types/node": "^17.0.31",
     "http-server": "^14.1.0",
     "jasmine-core": "~4.1.0",
     "karma": "~6.3.19",
