@@ -117,6 +117,5 @@
         }
       }
     }
-  },
-  "defaultProject": "my-ngsw-app"
+  }
 }
