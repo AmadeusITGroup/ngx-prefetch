@@ -1094,7 +1094,7 @@ __metadata:
     path: ^0.12.7
     rimraf: ^3.0.2
     ts-jest: ^28.0.0
-    typescript: ~4.6.0
+    typescript: ~4.7.0
     webpack: ^5.50.0
   languageName: unknown
   linkType: soft
@@ -5105,9 +5105,9 @@ resolve@^1.20.0:
   languageName: node
   linkType: hard
 
-"tar@npm:6.1.9":
-  version: 6.1.9
-  resolution: "tar@npm:6.1.9"
+"tar@npm:6.1.11":
+  version: 6.1.11
+  resolution: "tar@npm:6.1.11"
   dependencies:
     chownr: ^2.0.0
     fs-minipass: ^2.0.0
@@ -5115,7 +5115,7 @@ resolve@^1.20.0:
     minizlib: ^2.1.1
     mkdirp: ^1.0.3
     yallist: ^4.0.0
-  checksum: 90df3af5353b423a27b15e0f07ca3191396db727b7747e9e627b5fb39dbfe8ecb511c6b2b3f2e2add3a192df0589f4fbb899babf1e03ce52ebf4a84710f1a988
+  checksum: a04c07bb9e2d8f46776517d4618f2406fb977a74d914ad98b264fc3db0fe8224da5bec11e5f8902c5b9bcb8ace22d95fbe3c7b36b8593b7dfc8391a25898f32f
   languageName: node
   linkType: hard
 
@@ -5297,23 +5297,23 @@ resolve@^1.20.0:
   languageName: node
   linkType: hard
 
-"typescript@npm:~4.6.0":
-  version: 4.6.2
-  resolution: "typescript@npm:4.6.2"
+"typescript@npm:~4.7.0":
+  version: 4.7.2
+  resolution: "typescript@npm:4.7.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 8a44ed7e6f6c4cb1ebe8cf236ecda2fb119d84dcf0fbd77e707b2dfea1bbcfc4e366493a143513ce7f57203c75da9d4e20af6fe46de89749366351046be7577c
+  checksum: 5163585e6b56410f77d5483b698d9489bbee8902c99029eb70cf6d21525a186530ce19a00951af84eefd4a131cc51d0959f5118e25e70ab61f45ac4057dbd1ef
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@~4.6.0#~builtin<compat/typescript>":
-  version: 4.6.2
-  resolution: "typescript@patch:typescript@npm%3A4.6.2#~builtin<compat/typescript>::version=4.6.2&hash=493e53"
+"typescript@patch:typescript@~4.7.0#~builtin<compat/typescript>":
+  version: 4.7.2
+  resolution: "typescript@patch:typescript@npm%3A4.7.2#~builtin<compat/typescript>::version=4.7.2&hash=493e53"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: efb83260a22ee49d4c8bdc59b3cefe54fdf51d6f563f5c3a35aa3d5e46fb12f3f1d33a36d6f9f64171e567ead1847e99cb612d0a9a74e7d44e16cad9d0bbc937
+  checksum: 09d93fc0983d38eadd9b0427f790b49b4437f45002a87d447be3fbe53120880e87a91dd03e1d900498f99205d6e0b7c9784fe41fca11d56f4bbce371f74bb160
   languageName: node
   linkType: hard
 
