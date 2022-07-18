@@ -25,7 +25,7 @@
     "@angular/forms": "^14.0.1",
     "@angular/platform-browser": "^14.0.1",
     "@angular/platform-browser-dynamic": "^14.0.1",
-    "@angular/router": "^14.0.1",
+    "@angular/router": "^14.0.6",
     "@angular/service-worker": "^14.0.1",
     "rxjs": "~7.5.5",
     "tslib": "^2.4.0",
