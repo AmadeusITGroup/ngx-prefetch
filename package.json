@@ -31,7 +31,7 @@
   "builders": "builders.json",
   "homepage": "https://github.com/AmadeusITGroup/ngx-prefetch#readme",
   "dependencies": {
-    "@angular-devkit/architect": "^0.1400.1",
+    "@angular-devkit/architect": "^0.1401.0",
     "@angular-devkit/core": "^14.0.1",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
