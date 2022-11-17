@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "ngAddSchematicsSchema",
+  "title": "Add ngx-prefetch library",
+  "description": "Add the ngx-prefetch library to your application.",
+  "properties": {
+    "projectName": {
+      "type": "string",
+      "description": "Project name",
+      "x-prompt": "The `angular.json` project name for which prefetch should be applied. Mandatory for multiple projects."
+    },
+    "targetBuild": {
+      "type": "string",
+      "description": "The target build",
+      "default": "build:production",
+      "x-prompt": "The `angular.json` target build for which prefetch should be applied (ex: `build:production`)."
+    }
+  },
+  "required": [
+  ]
+}
