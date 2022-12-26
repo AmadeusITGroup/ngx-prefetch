@@ -1,6 +1,6 @@
 {
   "name": "@o3r/ngx-prefetch",
-  "version": "14.0.2",
+  "version": "0.0.0",
   "description": "Angular builder for prefetching resources before loading the application",
   "main": "dist/index.js",
   "scripts": {
