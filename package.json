@@ -51,8 +51,6 @@
     "ts-jest": "^29.0.3"
   },
   "resolutions": {
-    "minimist": "1.2.7",
-    "ansi-regex": "5.0.1",
     "tmpl": "1.0.5",
     "tar": "6.1.12"
   }
