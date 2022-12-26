@@ -1,6 +1,5 @@
 import type {BuilderOutput, Target} from '@angular-devkit/architect';
 import {createBuilder} from '@angular-devkit/architect';
-import * as commentJson from 'comment-json';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as webpack from 'webpack';
@@ -82,7 +81,7 @@ export default createBuilder<PrefetchBuilderSchema>(async (options, context): Pr
       error
     }
   }
-  const swJson = commentJson.parse(swJsonString);
+  const swJson = JSON.parse(swJsonString);
 
   if (!swJson.assetGroups || swJson.assetGroups.length <= 0) {
     return {
@@ -96,7 +95,7 @@ export default createBuilder<PrefetchBuilderSchema>(async (options, context): Pr
   const prefetchTemplate = fs.readFileSync(path.join(__dirname, 'templates', 'prefetch.mustache'), {encoding: 'utf-8'});
   const configOptions = ['crossorigin', 'resourceTypes'];
   const variables = {
-    resourceArray: commentJson.stringify(resourceArray),
+    resourceArray: JSON.stringify(resourceArray),
     prefetchConfig: JSON.stringify(filterOptions(options, configOptions)),
     staticsFullPath: options.staticsFullPath
   };
