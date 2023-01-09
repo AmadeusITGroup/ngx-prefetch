@@ -1,3 +1,5 @@
+![npm](https://img.shields.io/npm/dw/@o3r/ngx-prefetch?color=8B8000)
+
 # ngx-prefetch
 Angular builder for prefetching resources before loading the application
 
