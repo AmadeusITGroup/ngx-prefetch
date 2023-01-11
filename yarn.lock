@@ -15,17 +15,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/architect@npm:^0.1500.4":
-  version: 0.1500.4
-  resolution: "@angular-devkit/architect@npm:0.1500.4"
+"@angular-devkit/architect@npm:^0.1501.0":
+  version: 0.1501.0
+  resolution: "@angular-devkit/architect@npm:0.1501.0"
   dependencies:
-    "@angular-devkit/core": 15.0.4
+    "@angular-devkit/core": 15.1.0
     rxjs: 6.6.7
-  checksum: 80900e0ac44b8c5e84ea2c8edb5ca1469b75a7e2cbbbb5da7a9a833f423bcbd208a10d41346e19dfc0092a257275fc90bbde26c6fe8a3ee6d03b4cb24fb2b195
+  checksum: 37895f0f4d6c8e101f5570104814abaed97ce1343d9ab2b52c42bfe05996011cd0dbfe1bfa4342b243c63a6f6e9e955bd228a5bbef8bcc56afc9e4a8cfdf76c6
   languageName: node
   linkType: hard
 
-"@angular-devkit/core@npm:15.0.4, @angular-devkit/core@npm:^15.0.4":
+"@angular-devkit/core@npm:15.1.0":
+  version: 15.1.0
+  resolution: "@angular-devkit/core@npm:15.1.0"
+  dependencies:
+    ajv: 8.12.0
+    ajv-formats: 2.1.1
+    jsonc-parser: 3.2.0
+    rxjs: 6.6.7
+    source-map: 0.7.4
+  peerDependencies:
+    chokidar: ^3.5.2
+  peerDependenciesMeta:
+    chokidar:
+      optional: true
+  checksum: 064c806d49601c46dd7ba80efa1bc0fd697035413423e7e08e7ce51b59bb16967408f12793acfa6d4c1b905b3f63583143a6ae37a62da5b0402e60c9dc772b97
+  languageName: node
+  linkType: hard
+
+"@angular-devkit/core@npm:^15.0.4":
   version: 15.0.4
   resolution: "@angular-devkit/core@npm:15.0.4"
   dependencies:
@@ -849,7 +867,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@o3r/ngx-prefetch@workspace:."
   dependencies:
-    "@angular-devkit/architect": ^0.1500.4
+    "@angular-devkit/architect": ^0.1501.0
     "@angular-devkit/core": ^15.0.4
     "@types/jest": ^29.0.0
     "@types/mustache": ^4.1.2
@@ -1458,6 +1476,18 @@ __metadata:
     require-from-string: ^2.0.2
     uri-js: ^4.2.2
   checksum: 5e0ff226806763be73e93dd7805b634f6f5921e3e90ca04acdf8db81eed9d8d3f0d4c5f1213047f45ebbf8047ffe0c840fa1ef2ec42c3a644899f69aa72b5bef
+  languageName: node
+  linkType: hard
+
+"ajv@npm:8.12.0":
+  version: 8.12.0
+  resolution: "ajv@npm:8.12.0"
+  dependencies:
+    fast-deep-equal: ^3.1.1
+    json-schema-traverse: ^1.0.0
+    require-from-string: ^2.0.2
+    uri-js: ^4.2.2
+  checksum: 4dc13714e316e67537c8b31bc063f99a1d9d9a497eb4bbd55191ac0dcd5e4985bbb71570352ad6f1e76684fb6d790928f96ba3b2d4fd6e10024be9612fe3f001
   languageName: node
   linkType: hard
 
