@@ -1,0 +1,12 @@
+{
+    "$schema": "https://raw.githubusercontent.com/angular/angular-cli/14.2.x/packages/angular_devkit/schematics/collection-schema.json",
+    "schematics": {
+      "ng-add": {
+        "description": "Add ngx-prefetch library to your application.",
+        "factory": "./dist/schematics/ng-add/index#ngAdd",
+        "schema": "./dist/schematics/ng-add/schema.json",
+        "aliases": ["install", "i"]
+      }
+    }
+  }
+  
