@@ -36,7 +36,7 @@
     "@angular/cli": "^15.1.0",
     "@angular/compiler-cli": "^15.1.0",
     "@o3r/ngx-prefetch": "../..",
-    "@playwright/test": "^1.29.2",
+    "@playwright/test": "^1.30.0",
     "@types/jasmine": "~4.3.1",
     "@types/node": "^18.11.18",
     "http-server": "^14.1.1",
