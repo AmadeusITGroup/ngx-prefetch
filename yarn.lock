@@ -15,19 +15,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@angular-devkit/architect@npm:0.1501.6":
-  version: 0.1501.6
-  resolution: "@angular-devkit/architect@npm:0.1501.6"
+"@angular-devkit/architect@npm:0.1502.5":
+  version: 0.1502.5
+  resolution: "@angular-devkit/architect@npm:0.1502.5"
   dependencies:
-    "@angular-devkit/core": 15.1.6
+    "@angular-devkit/core": 15.2.5
     rxjs: 6.6.7
-  checksum: f63b846be14a890c3a1d4da923417e678a3c962ad2073fd440a14ecbaee376395f2368daed458afa243bff12e44289b0556df5008029fa0f66e0b2bce0e389e3
+  checksum: a023d182d6a363ff24c80bd076a1db43499d1643903ff622a2bb65b7e1d68b287dc11bcacb132e63d3a12aadc659d41398386eb9cad7e347de3e75ac1150f5d9
   languageName: node
   linkType: hard
 
-"@angular-devkit/core@npm:15.1.6, @angular-devkit/core@npm:^15.1.6":
-  version: 15.1.6
-  resolution: "@angular-devkit/core@npm:15.1.6"
+"@angular-devkit/core@npm:15.2.5, @angular-devkit/core@npm:^15.2.5":
+  version: 15.2.5
+  resolution: "@angular-devkit/core@npm:15.2.5"
   dependencies:
     ajv: 8.12.0
     ajv-formats: 2.1.1
@@ -39,20 +39,20 @@ __metadata:
   peerDependenciesMeta:
     chokidar:
       optional: true
-  checksum: 2c7edb2f278fa8f5afc731ee2d0ff668c7f2e35531ecf5961ce690d73029422c80783a7498c55a10b7c5e6bc80866061b027ed6b9a68169777e1684c82df22c8
+  checksum: 4f44e190ba5c2507e033270842192a6d97c0ad4ecbf18fa790208b042dcee706ab040e3ccd3223b214811492e32091b0dea2fa621a1adbed1f0108eea678a080
   languageName: node
   linkType: hard
 
-"@angular-devkit/schematics@npm:^15.1.6":
-  version: 15.1.6
-  resolution: "@angular-devkit/schematics@npm:15.1.6"
+"@angular-devkit/schematics@npm:^15.2.5":
+  version: 15.2.5
+  resolution: "@angular-devkit/schematics@npm:15.2.5"
   dependencies:
-    "@angular-devkit/core": 15.1.6
+    "@angular-devkit/core": 15.2.5
     jsonc-parser: 3.2.0
-    magic-string: 0.27.0
+    magic-string: 0.29.0
     ora: 5.4.1
     rxjs: 6.6.7
-  checksum: a8fec20629517fe99a86cf192d7b63ddee89a829b2a37a966863fa08b246cc00faf4ee85672d660d349e4e90e3b9f1cbb35a28dfff8f2368a5a93ea52600c736
+  checksum: dc03136799138854e672febfc8c8be110f7af4d08b18f19156e9ca17a85c3fa1db8cb301292b086e193fc32c16aadb6bcf7793968a4f2c1451ab071d8f40ec38
   languageName: node
   linkType: hard
 
@@ -801,13 +801,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jridgewell/trace-mapping@npm:^0.3.12, @jridgewell/trace-mapping@npm:^0.3.14, @jridgewell/trace-mapping@npm:^0.3.15, @jridgewell/trace-mapping@npm:^0.3.9":
+"@jridgewell/trace-mapping@npm:^0.3.12, @jridgewell/trace-mapping@npm:^0.3.15, @jridgewell/trace-mapping@npm:^0.3.9":
   version: 0.3.17
   resolution: "@jridgewell/trace-mapping@npm:0.3.17"
   dependencies:
     "@jridgewell/resolve-uri": 3.1.0
     "@jridgewell/sourcemap-codec": 1.4.14
   checksum: 9d703b859cff5cd83b7308fd457a431387db5db96bd781a63bf48e183418dd9d3d44e76b9e4ae13237f6abeeb25d739ec9215c1d5bfdd08f66f750a50074a339
+  languageName: node
+  linkType: hard
+
+"@jridgewell/trace-mapping@npm:^0.3.17":
+  version: 0.3.18
+  resolution: "@jridgewell/trace-mapping@npm:0.3.18"
+  dependencies:
+    "@jridgewell/resolve-uri": 3.1.0
+    "@jridgewell/sourcemap-codec": 1.4.14
+  checksum: 0572669f855260808c16fe8f78f5f1b4356463b11d3f2c7c0b5580c8ba1cbf4ae53efe9f627595830856e57dbac2325ac17eb0c3dd0ec42102e6f227cc289c02
   languageName: node
   linkType: hard
 
@@ -862,9 +872,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@o3r/ngx-prefetch@workspace:."
   dependencies:
-    "@angular-devkit/architect": 0.1501.6
-    "@angular-devkit/core": ^15.1.6
-    "@angular-devkit/schematics": ^15.1.6
+    "@angular-devkit/architect": 0.1502.5
+    "@angular-devkit/core": ^15.2.5
+    "@angular-devkit/schematics": ^15.2.5
     "@types/jest": ^29.0.0
     "@types/mustache": ^4.2.2
     "@types/node": ^18.11.9
@@ -877,7 +887,7 @@ __metadata:
     rimraf: ^5.0.0
     ts-jest: ^29.0.3
     typescript: ~4.9.5
-    webpack: ^5.75.0
+    webpack: ^5.79.0
   languageName: unknown
   linkType: soft
 
@@ -974,17 +984,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/estree@npm:*":
+"@types/estree@npm:*, @types/estree@npm:^1.0.0":
   version: 1.0.0
   resolution: "@types/estree@npm:1.0.0"
   checksum: 910d97fb7092c6738d30a7430ae4786a38542023c6302b95d46f49420b797f21619cdde11fa92b338366268795884111c2eb10356e4bd2c8ad5b92941e9e6443
-  languageName: node
-  linkType: hard
-
-"@types/estree@npm:^0.0.51":
-  version: 0.0.51
-  resolution: "@types/estree@npm:0.0.51"
-  checksum: e56a3bcf759fd9185e992e7fdb3c6a5f81e8ff120e871641607581fb3728d16c811702a7d40fa5f869b7f7b4437ab6a87eb8d98ffafeee51e85bbe955932a189
   languageName: node
   linkType: hard
 
@@ -2206,10 +2209,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"es-module-lexer@npm:^0.9.0":
-  version: 0.9.3
-  resolution: "es-module-lexer@npm:0.9.3"
-  checksum: 84bbab23c396281db2c906c766af58b1ae2a1a2599844a504df10b9e8dc77ec800b3211fdaa133ff700f5703d791198807bba25d9667392d27a5e9feda344da8
+"es-module-lexer@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "es-module-lexer@npm:1.2.1"
+  checksum: c4145b853e1491eaa5d591e4580926d242978c38071ad3d09165c3b6d50314cc0ae3bf6e1dec81a9e53768b9299df2063d2e4a67d7742a5029ddeae6c4fc26f0
   languageName: node
   linkType: hard
 
@@ -3727,12 +3730,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"magic-string@npm:0.27.0":
-  version: 0.27.0
-  resolution: "magic-string@npm:0.27.0"
+"magic-string@npm:0.29.0":
+  version: 0.29.0
+  resolution: "magic-string@npm:0.29.0"
   dependencies:
     "@jridgewell/sourcemap-codec": ^1.4.13
-  checksum: 273faaa50baadb7a2df6e442eac34ad611304fc08fe16e24fe2e472fd944bfcb73ffb50d2dc972dc04e92784222002af46868cb9698b1be181c81830fd95a13e
+  checksum: 19e5398fcfc44804917127c72ad622c68a19a0a10cbdb8d4f9f9417584a087fe9e117140bfb2463d86743cf1ed9cf4182ae0b0ad1a7536f7fdda257ee4449ffb
   languageName: node
   linkType: hard
 
@@ -4596,12 +4599,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"serialize-javascript@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "serialize-javascript@npm:6.0.0"
+"serialize-javascript@npm:^6.0.1":
+  version: 6.0.1
+  resolution: "serialize-javascript@npm:6.0.1"
   dependencies:
     randombytes: ^2.1.0
-  checksum: 56f90b562a1bdc92e55afb3e657c6397c01a902c588c0fe3d4c490efdcc97dcd2a3074ba12df9e94630f33a5ce5b76a74784a7041294628a6f4306e0ec84bf93
+  checksum: 3c4f4cb61d0893b988415bdb67243637333f3f574e9e9cc9a006a2ced0b390b0b3b44aef8d51c951272a9002ec50885eefdc0298891bc27eb2fe7510ea87dc4f
   languageName: node
   linkType: hard
 
@@ -4867,15 +4870,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"terser-webpack-plugin@npm:^5.1.3":
-  version: 5.3.6
-  resolution: "terser-webpack-plugin@npm:5.3.6"
+"terser-webpack-plugin@npm:^5.3.7":
+  version: 5.3.7
+  resolution: "terser-webpack-plugin@npm:5.3.7"
   dependencies:
-    "@jridgewell/trace-mapping": ^0.3.14
+    "@jridgewell/trace-mapping": ^0.3.17
     jest-worker: ^27.4.5
     schema-utils: ^3.1.1
-    serialize-javascript: ^6.0.0
-    terser: ^5.14.1
+    serialize-javascript: ^6.0.1
+    terser: ^5.16.5
   peerDependencies:
     webpack: ^5.1.0
   peerDependenciesMeta:
@@ -4885,13 +4888,13 @@ __metadata:
       optional: true
     uglify-js:
       optional: true
-  checksum: 8f3448d7fdb0434ce6a0c09d95c462bfd2f4a5a430233d854163337f734a7f5c07c74513d16081e06d4ca33d366d5b1a36f5444219bc41a7403afd6162107bad
+  checksum: 095e699fdeeb553cdf2c6f75f983949271b396d9c201d7ae9fc633c45c1c1ad14c7257ef9d51ccc62213dd3e97f875870ba31550f6d4f1b6674f2615562da7f7
   languageName: node
   linkType: hard
 
-"terser@npm:^5.14.1":
-  version: 5.16.1
-  resolution: "terser@npm:5.16.1"
+"terser@npm:^5.16.5":
+  version: 5.16.9
+  resolution: "terser@npm:5.16.9"
   dependencies:
     "@jridgewell/source-map": ^0.3.2
     acorn: ^8.5.0
@@ -4899,7 +4902,7 @@ __metadata:
     source-map-support: ~0.5.20
   bin:
     terser: bin/terser
-  checksum: cb524123504a2f0d9140c1e1a8628c83bba9cacc404c6aca79e2493a38dfdf21275617ba75b91006b3f1ff586e401ab31121160cd253699f334c6340ea2756f5
+  checksum: b373693ee01ce08cc9b9595d57df889acbbc899d929a7fe53662330ce954d53145582f6715c9cc4839d555f5769a28fbeb203155b54e3a9c6c646db292002edd
   languageName: node
   linkType: hard
 
@@ -5156,12 +5159,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:^5.75.0":
-  version: 5.77.0
-  resolution: "webpack@npm:5.77.0"
+"webpack@npm:^5.79.0":
+  version: 5.79.0
+  resolution: "webpack@npm:5.79.0"
   dependencies:
     "@types/eslint-scope": ^3.7.3
-    "@types/estree": ^0.0.51
+    "@types/estree": ^1.0.0
     "@webassemblyjs/ast": 1.11.1
     "@webassemblyjs/wasm-edit": 1.11.1
     "@webassemblyjs/wasm-parser": 1.11.1
@@ -5170,7 +5173,7 @@ __metadata:
     browserslist: ^4.14.5
     chrome-trace-event: ^1.0.2
     enhanced-resolve: ^5.10.0
-    es-module-lexer: ^0.9.0
+    es-module-lexer: ^1.2.1
     eslint-scope: 5.1.1
     events: ^3.2.0
     glob-to-regexp: ^0.4.1
@@ -5181,7 +5184,7 @@ __metadata:
     neo-async: ^2.6.2
     schema-utils: ^3.1.0
     tapable: ^2.1.1
-    terser-webpack-plugin: ^5.1.3
+    terser-webpack-plugin: ^5.3.7
     watchpack: ^2.4.0
     webpack-sources: ^3.2.3
   peerDependenciesMeta:
@@ -5189,7 +5192,7 @@ __metadata:
       optional: true
   bin:
     webpack: bin/webpack.js
-  checksum: 21341bb72cbbf61dfb3af91eabe9290a6c05139f268eff3c419e5339deb6c79f2f36de55d9abf017d3ccbad290a535c02325001b2816acc393f3c022e67ac17c
+  checksum: 3fbd82dadc75c8f823c900c5d50263830b77e6be6a8abb26eec12f93dec94c2f07fa44c1ef1f28319682404e532d9707ed04ed6cb89af87ca7d544e435d8ef95
   languageName: node
   linkType: hard
 
