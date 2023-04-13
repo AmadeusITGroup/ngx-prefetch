@@ -18,23 +18,23 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^15.1.5",
-    "@angular/common": "^15.1.5",
-    "@angular/compiler": "^15.1.5",
-    "@angular/core": "^15.1.5",
-    "@angular/forms": "^15.1.5",
-    "@angular/platform-browser": "^15.1.5",
-    "@angular/platform-browser-dynamic": "^15.1.5",
-    "@angular/router": "^15.1.5",
-    "@angular/service-worker": "^15.1.5",
+    "@angular/animations": "^15.2.6",
+    "@angular/common": "^15.2.6",
+    "@angular/compiler": "^15.2.6",
+    "@angular/core": "^15.2.6",
+    "@angular/forms": "^15.2.6",
+    "@angular/platform-browser": "^15.2.6",
+    "@angular/platform-browser-dynamic": "^15.2.6",
+    "@angular/router": "^15.2.6",
+    "@angular/service-worker": "^15.2.6",
     "rxjs": "~7.8.0",
     "tslib": "^2.5.0",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^15.1.6",
-    "@angular/cli": "^15.1.5",
-    "@angular/compiler-cli": "^15.1.5",
+    "@angular-devkit/build-angular": "^15.2.5",
+    "@angular/cli": "^15.2.5",
+    "@angular/compiler-cli": "^15.2.6",
     "@o3r/ngx-prefetch": "../..",
     "@playwright/test": "^1.32.2",
     "@types/jasmine": "~4.3.1",
@@ -51,7 +51,7 @@
   },
   "engines": {
     "npm": ">=6.14.11",
-    "node": ">=14.16.0",
+    "node": ">=16",
     "yarn": "please-use-npm"
   }
 }
