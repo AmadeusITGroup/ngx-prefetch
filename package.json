@@ -34,13 +34,13 @@
   "builders": "builders.json",
   "homepage": "https://github.com/AmadeusITGroup/ngx-prefetch#readme",
   "dependencies": {
-    "@angular-devkit/architect": "^0.1600.0",
-    "@angular-devkit/core": "^16.0.0",
-    "typescript": "~4.9.5",
+    "@angular-devkit/architect": "^0.1602.0",
+    "@angular-devkit/core": "^16.2.0",
+    "typescript": "~5.1.6",
     "webpack": "^5.79.0"
   },
   "devDependencies": {
-    "@angular-devkit/schematics": "^16.0.0",
+    "@angular-devkit/schematics": "^16.2.0",
     "@types/jest": "^29.0.0",
     "@types/mustache": "^4.2.2",
     "@types/node": "^18.11.9",
