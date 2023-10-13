@@ -122,7 +122,7 @@ export default createBuilder<PrefetchBuilderSchema>(async (options, context): Pr
       if (err || stats.hasErrors()) {
         resolve({
           success: false,
-          error: `Webpack tanspilation failed. ${err || stats.hasErrors()}`
+          error: `Webpack transpilation failed. ${err || stats.hasErrors()}`
         });
       } else {
         resolve({
