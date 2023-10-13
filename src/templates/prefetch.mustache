@@ -23,19 +23,40 @@
   }
 
   var resList = {{{resourceArray}}};
-  var fullPath = '{{{staticsFullPath}}}';
+  var staticsFullPath = '{{{staticsFullPath}}}';
   var staticsFullPathKey = 'STATICS_FULL_PATH';
   // for testing
-  if (fullPath === `{${staticsFullPathKey}}`) { fullPath = '.'; }
+  if (staticsFullPath === `{${staticsFullPathKey}}`) { staticsFullPath = '.'; }
 
   var language = '{LANG}';
   var languageKey = 'LANG';
+  var locPattern = `{{{localizationPattern}}}`;
   if (language !== `{${languageKey}}`) {
-    resList.push(`/localizations/${language}.json`);
+    resList.push(locPattern);
+  }
+
+  var dynamicContentPath = '{DYNAMIC_CONTENT_PATH}';
+  var dynamicContentPathKey = 'DYNAMIC_CONTENT_PATH';
+
+  var dynamicContentFiles = '{DYNAMIC_CONTENT_FILES}';
+  var dynamicContentFilesKey = 'DYNAMIC_CONTENT_FILES';
+
+  var hasDynamicContent = (dynamicContentPath !== `{${dynamicContentPathKey}}`) && (dynamicContentFiles !== `{${dynamicContentFilesKey}}`);
+
+  if (hasDynamicContent) {
+    try {
+      dynamicContentFiles = JSON.parse(dynamicContentFiles);
+    } catch (e) {
+      console.error(`Could not parse dynamic content files: '${dynamicContentFiles}'`);
+    }
   }
 
   resList.forEach(function(resource) {
     if (typeof resource === 'string') {
+      var fullPath = staticsFullPath;
+      if (hasDynamicContent && dynamicContentFiles.includes(resource.slice(1))) {
+        fullPath = dynamicContentPath + '/';
+      }
       var splitRes = resource.split('.');
       var extension = splitRes[splitRes.length - 1];
       appendLink(fullPath + resource, getResType(extension));
