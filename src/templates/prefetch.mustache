@@ -24,9 +24,16 @@
 
   var resList = {{{resourceArray}}};
   var fullPath = '{{{staticsFullPath}}}';
-  var shamefulString = 'STATICS_FULL_PATH';
+  var staticsFullPathKey = 'STATICS_FULL_PATH';
   // for testing
-  if (fullPath === `{${shamefulString}}`) { fullPath = '.'; }
+  if (fullPath === `{${staticsFullPathKey}}`) { fullPath = '.'; }
+
+  var language = '{LANG}';
+  var languageKey = 'LANG';
+  if (language !== `{${languageKey}}`) {
+    resList.push(`/localizations/${language}.json`);
+  }
+
   resList.forEach(function(resource) {
     if (typeof resource === 'string') {
       var splitRes = resource.split('.');
