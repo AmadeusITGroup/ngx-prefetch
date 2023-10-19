@@ -97,7 +97,8 @@ export default createBuilder<PrefetchBuilderSchema>(async (options, context): Pr
   const variables = {
     resourceArray: JSON.stringify(resourceArray),
     prefetchConfig: JSON.stringify(filterOptions(options, configOptions)),
-    staticsFullPath: options.staticsFullPath
+    staticsFullPath: options.staticsFullPath,
+    localizationPattern: options.localizationPattern
   };
   const prefetchJs = Mustache.render(prefetchTemplate, variables);
 

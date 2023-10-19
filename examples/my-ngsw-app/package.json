@@ -6,7 +6,7 @@
     "start": "ng serve",
     "start:prod": "npm run build:prod && npm run server",
     "start:prod:ci": "npm run build:prod && npm run server:ci",
-    "server": "http-server -p 8080 -c-1 dist",
+    "server": "http-server -p 8080 -c-1 dist --cors",
     "server:ci": "nohup http-server -p 8080 -c-1 dist &",
     "build": "ng build",
     "build:prod": "npm run clean && ng build --configuration production && npm run generate:prefetch",

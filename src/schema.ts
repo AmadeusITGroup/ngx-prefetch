@@ -14,6 +14,9 @@ export interface PrefetchBuilderSchema extends JsonObject {
   /** Flag for creating a production (minified) version of the js file or a development one. */
   production: boolean;
 
-  /** By default the prefetched resources are hosted next to the `ngxPrefetch.js` file, on the same server. If it is not the case, you can configure the full path of the resources that will be prefetched. It is also possible to set this value by runtime. Instead of setting it in the Builder's options, you can search and replace for `{STATICS_FULL_PATH}` on the server side in order to inject a path. */
+  /** By default the prefetched static resources are hosted next to the `ngxPrefetch.js` file, on the same server. If it is not the case, you can configure the full path of the static resources that will be prefetched. It is also possible to set this value at runtime. Instead of setting it in the Builder's options, you can search for `{STATICS_FULL_PATH}` and replace it on the server side in order to inject a path. */
   staticsFullPath: string;
+
+  /** Pattern for the path of the localization file. By default, the pattern corresponds to the JSON file in a folder called localizations. */
+  localizationPattern: string;
 }

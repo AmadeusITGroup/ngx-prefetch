@@ -4,7 +4,7 @@ import {lazyAndPrefetchAssetGroups, prefetchInputAssetGroup} from './mocks';
 describe('Prefetch builder', () => {
   describe('getResArray', () => {
     test('should output all urls for prefetch install mode', () => {
-      
+
       const expectedArray = [
         '/assets/icons/icon-128x128.png',
         '/assets/icons/icon-144x144.png',
@@ -26,7 +26,7 @@ describe('Prefetch builder', () => {
     });
 
     test('should output only urls for for prefetch install mode', () => {
-      
+
       const expectedArray = [
         '/favicon.ico',
         '/index.html',
@@ -53,7 +53,8 @@ describe('Prefetch builder', () => {
         },
         crossorigin: true,
         production: true,
-        staticsFullPath: '{STATICS_FULL_PATH}'
+        staticsFullPath: '{STATICS_FULL_PATH}',
+        localizationPattern: '/localizations/${language}.json'
       };
 
       const expectedBuilderConfig = {
