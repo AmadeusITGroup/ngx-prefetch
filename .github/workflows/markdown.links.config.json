@@ -1,0 +1,7 @@
+{
+    "ignorePatterns": [
+      {
+        "pattern": "^https://my-web-app.com"
+      }
+    ]
+}
