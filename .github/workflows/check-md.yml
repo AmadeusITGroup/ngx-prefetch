@@ -1,0 +1,18 @@
+name: Check Markdown links
+
+on:
+  pull_request:
+    branches:
+    - master
+    - 'release/*'
+
+jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+      with:
+        config-file: '.github/workflows/markdown.links.config.json'
+        check-modified-files-only: 'yes'
+        use-verbose-mode: 'yes'
