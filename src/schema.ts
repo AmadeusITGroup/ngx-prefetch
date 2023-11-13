@@ -19,4 +19,7 @@ export interface PrefetchBuilderSchema extends JsonObject {
 
   /** Pattern for the path of the localization file. By default, the pattern corresponds to the JSON file in a folder called localizations. */
   localizationPattern: string;
+
+  /** List of fallback locales mapping */
+  fallbackLocalesMap?: {[locale: string]: string};
 }

@@ -93,7 +93,7 @@ export default createBuilder<PrefetchBuilderSchema>(async (options, context): Pr
 
   context.reportProgress(2, STEP_NUMBER, 'Read prefetch template file.');
   const prefetchTemplate = fs.readFileSync(path.join(__dirname, 'templates', 'prefetch.mustache'), {encoding: 'utf-8'});
-  const configOptions = ['crossorigin', 'resourceTypes'];
+  const configOptions = ['crossorigin', 'resourceTypes', 'fallbackLocalesMap'];
   const variables = {
     resourceArray: JSON.stringify(resourceArray),
     prefetchConfig: JSON.stringify(filterOptions(options, configOptions)),

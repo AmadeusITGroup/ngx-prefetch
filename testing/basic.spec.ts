@@ -54,7 +54,7 @@ describe('Prefetch builder', () => {
         crossorigin: true,
         production: true,
         staticsFullPath: '{STATICS_FULL_PATH}',
-        localizationPattern: '/localizations/${language}.json'
+        localizationPattern: 'localizations/${language}.json'
       };
 
       const expectedBuilderConfig = {

@@ -89,8 +89,14 @@ Please refer to the details on how the ngx-prefetch works [here](docs/HOW_IT_WOR
   If this is not the case, you can configure the full path of the resources that will be prefetched (ex: https://my-web-app.com/path/to/my-app/). 
   It is also possible to set this value at runtime. Instead of setting it in the Builder's options, you can search for `{STATICS_FULL_PATH}` and replace it on the server side in order to inject a path.
 
-  - `localizationPattern` Pattern for the relative path of the localization file. By default, the pattern corresponds to the JSON file in a folder called localizations: `"/localizations/${language}.json"`. 
+  - `localizationPattern` Pattern for the relative path of the localization file. By default, the pattern corresponds to the JSON file in a folder called localizations: `"localizations/${language}.json"`. 
   If the localization pattern contains the `${language}` variable, the language value must be set (as explained [here](docs/HOW_IT_WORKS.md#localization)), and it will be replaced by the server.
+  
+  - `fallbackLocalesMap` Mapping of fallback locales (only available if there is dynamic content in the application), in case the localization file of the input language cannot be found. 
+  First, a search for an exact match of the input language will be done in the `fallbackLocalesMap`. If not found and the input language parameter is of type locale,
+  a search for the shortened version of the locale (for example, search for `en` if the input language is `en-GB`) will be done. If this is not found either, a search
+  for the default locale `*` will be searched for. If none of these are found within the dynamic content files, the localization file will not be prefetched.
+  You can find a detailed example [below](README.md#example-of-fallback-locale).
 
 ### Example of full configuration
 
@@ -111,7 +117,21 @@ Please refer to the details on how the ngx-prefetch works [here](docs/HOW_IT_WOR
         "crossorigin": true,
         "production": false,
         "staticsFullPath": "https://my-web-app.com/path/to/my-app/",
-        "localizationPattern": "/localizations/${language}.json"
+        "localizationPattern": "localizations/${language}.json",
+        "fallbackLocalesMap": {
+            "fr-CA": "fr-FR",
+            "de": "de-DE",
+            "*": "en-GB"
+        }
     }
 }
 ```
+
+#### Example of fallback locale
+
+Let's assume you have the `fallbackLocalesMap` above in your configuration and three localization files in your assets: `fr-FR.json`, `de-DE.json`, and `en-GB.json`.
+If your language parameter is equal to:
+- `fr-FR`: you will prefetch this file directly
+- `fr-CA`: you will fallback to `fr-FR`
+- `de-AT`: you will fallback to `de-DE`
+- `it-IT`: you will fallback to `en-GB` (the default fallback locale)

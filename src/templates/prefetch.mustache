@@ -22,18 +22,19 @@
     document.head.appendChild(res);
   }
 
+  function addLocalizationFile(locPattern) {
+    if (dynamicContentFiles.includes(locPattern)) {
+      resList.push(locPattern);
+      return true;
+    }
+    return false;
+  }
+
   var resList = {{{resourceArray}}};
   var staticsFullPath = '{{{staticsFullPath}}}';
   var staticsFullPathKey = 'STATICS_FULL_PATH';
   // for testing
   if (staticsFullPath === `{${staticsFullPathKey}}`) { staticsFullPath = '.'; }
-
-  var language = '{LANG}';
-  var languageKey = 'LANG';
-  var locPattern = `{{{localizationPattern}}}`;
-  if (language !== `{${languageKey}}` && /^([a-z]{2,3})(-([A-Z]{2}|[A-Za-z]{4,5}))?$/.test(language)) {
-    resList.push(locPattern);
-  }
 
   var dynamicContentPath = '{DYNAMIC_CONTENT_PATH}';
   var dynamicContentPathKey = 'DYNAMIC_CONTENT_PATH';
@@ -48,6 +49,41 @@
       dynamicContentFiles = JSON.parse(dynamicContentFiles);
     } catch (e) {
       console.error(`Could not parse dynamic content files: '${dynamicContentFiles}'`);
+    }
+  }
+
+  var language = '{LANG}';
+  var languageKey = 'LANG';
+  if (language !== `{${languageKey}}` && /^([a-z]{2,3})(-([A-Z]{2}|[A-Za-z]{4,5}))?$/.test(language)) {
+    if (hasDynamicContent && dynamicContentFiles) {
+      if (dynamicContentFiles.includes(`{{{localizationPattern}}}`)) {
+        resList.push(`{{{localizationPattern}}}`);
+      } else if (prefetchConfig.fallbackLocalesMap) {
+        var fallback = false;
+        var inputLanguage = language;
+        if (prefetchConfig.fallbackLocalesMap[inputLanguage]) {
+          language = prefetchConfig.fallbackLocalesMap[inputLanguage];
+          fallback = addLocalizationFile(`{{{localizationPattern}}}`);
+        }
+        if (!fallback && inputLanguage.includes('-')) {
+          language = inputLanguage.split('-')[0];
+          if (prefetchConfig.fallbackLocalesMap[language]) {
+            language = prefetchConfig.fallbackLocalesMap[language];
+            fallback = addLocalizationFile(`{{{localizationPattern}}}`);
+          }
+        }
+        if (!fallback && prefetchConfig.fallbackLocalesMap['*']) {
+          language = prefetchConfig.fallbackLocalesMap['*'];
+          fallback = addLocalizationFile(`{{{localizationPattern}}}`);
+        }
+        if (!fallback) {
+          console.warn('Language, fallback language, and default language not found in dynamic content files.')
+        }
+      } else {
+        console.warn('Language not found in dynamic content files.')
+      }
+    } else {
+      resList.push(`/{{{localizationPattern}}}`);
     }
   }
 
