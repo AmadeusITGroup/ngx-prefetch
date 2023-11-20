@@ -38,7 +38,18 @@
       "localizationPattern": {
         "type": "string",
         "description": "Pattern for the path of the localization file. By default, the pattern corresponds to the JSON file in a folder called localizations.",
-        "default": "/localizations/${language}.json"
+        "default": "localizations/${language}.json"
+      },
+      "fallbackLocalesMap": {
+        "type": "object",
+        "description": "List of fallback locales mapping",
+        "patternProperties": {
+          "([a-z]{2,3})(-([A-Z]{2}|[A-Za-z]{4,5}))?|([*])": {
+            "type": "string",
+            "pattern": "([a-z]{2,3})(-([A-Z]{2}|[A-Za-z]{4,5}))?"
+          }
+        },
+        "additionalProperties": false
       }
     },
     "additionalProperties": false,
