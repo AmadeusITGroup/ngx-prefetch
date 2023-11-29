@@ -1,24 +1,9 @@
 import { NgAddSchematicsSchema } from './schema';
 import { chain, Rule, SchematicContext, SchematicsException, Tree } from '@angular-devkit/schematics';
+import { getWorkspaceConfig, readPackageJson } from '@o3r/schematics';
+import type { WorkspaceSchema } from '@o3r/schematics';
 
-function readPackageJson(tree: Tree, workspaceProject: any) {
-  // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-  const workspaceConfig = tree.read(`${workspaceProject.root}/package.json`);
-  if (!workspaceConfig) {
-    throw new SchematicsException('Could not find package.json file');
-  }
-  return JSON.parse(workspaceConfig.toString());
-}
-
-function readAngularJson(tree: Tree) {
-  const workspaceConfig = tree.read('/angular.json');
-  if (!workspaceConfig) {
-    throw new SchematicsException('Could not find Angular workspace configuration');
-  }
-  return JSON.parse(workspaceConfig.toString());
-}
-
-function getFinalProjectName(workspace: any, projectName: string) {
+function getFinalProjectName(workspace: WorkspaceSchema, projectName: string) {
   if (projectName) return projectName;
   const projectKeys = Object.keys(workspace.projects);
   if (projectKeys.length !== 1) throw new SchematicsException('No project name provided and several projects were found in angular.json.');
@@ -33,7 +18,7 @@ function getFinalProjectName(workspace: any, projectName: string) {
 function updatePrefetchBuilder(options: NgAddSchematicsSchema): Rule {
   return (tree: Tree, context: SchematicContext) => {
 
-    const workspace = readAngularJson(tree);
+    const workspace = getWorkspaceConfig(tree);
     const projectName = getFinalProjectName(workspace, options.projectName);
 
     const workspaceProject = workspace.projects[projectName];
