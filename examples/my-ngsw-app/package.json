@@ -34,7 +34,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.0.9",
     "@angular/cli": "^17.0.9",
-    "@angular/compiler-cli": "^17.0.8",
+    "@angular/compiler-cli": "^17.1.1",
     "@o3r/ngx-prefetch": "../..",
     "@playwright/test": "^1.37.1",
     "@types/jasmine": "~5.1.4",
