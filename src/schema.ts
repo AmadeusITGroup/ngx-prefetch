@@ -22,4 +22,10 @@ export interface PrefetchBuilderSchema extends JsonObject {
 
   /** List of fallback locales mapping */
   fallbackLocalesMap?: {[locale: string]: string};
+
+  /**
+   * Path to the folder of ngsw.json in the production build output.
+   * If not defined, will try to compute it from the executor options.
+   */
+  outputPath?: string;
 }

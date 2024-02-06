@@ -46,6 +46,31 @@ export function filterOptions(options: PrefetchBuilderSchema, allowedOptions: st
 /** Maximum number of steps */
 const STEP_NUMBER = 4;
 
+/**
+ * Compute the path where to find the swJson file from the ngx-prefetch and the build target options.
+ * @param targetBuildBuilder
+ * @param targetOutputPath
+ * @param outputPathOverride
+ */
+function computeSwJsonFolderPath<T extends {base: string, browser?: string}>(targetBuildBuilder: string,
+  targetOutputPath: string | T, outputPathOverride: string | undefined) {
+  if (typeof outputPathOverride === 'string' && !!outputPathOverride) {
+    return outputPathOverride;
+  }
+  if (typeof targetOutputPath === 'string') {
+    if (['@nx/angular:application', '@angular-devkit/build-angular:application'].indexOf(targetBuildBuilder) > -1) {
+      return path.join(targetOutputPath, 'browser');
+    }
+    return targetOutputPath;
+  }
+  if (typeof targetOutputPath.browser === 'string' && typeof targetOutputPath.base === 'string') {
+    return path.join(targetOutputPath.base, targetOutputPath.browser);
+  }
+  if (typeof targetOutputPath.base === 'string') {
+    return targetOutputPath.base;
+  }
+  return undefined;
+}
 
 export default createBuilder<PrefetchBuilderSchema>(async (options, context): Promise<BuilderOutput> => {
   context.reportRunning();
@@ -59,16 +84,17 @@ export default createBuilder<PrefetchBuilderSchema>(async (options, context): Pr
   ]);
   const targetBuildOptions = await context.validateOptions<{ outputPath: string }>(targetBuildRawOptions, targetBuildBuilder);
 
+  /** Path to the build output folder */
+  const prodBuildOutputPath = computeSwJsonFolderPath(targetBuildBuilder, targetBuildOptions.outputPath, options.outputPath);
+
   /** Check the minimum of mandatory options to the builders */
-  if (typeof targetBuildOptions.outputPath !== 'string') {
+  if (!prodBuildOutputPath) {
     return {
       success: false,
-      error: `The targetBuild ${options.targetBuild} does not provide 'outputPath' option`
+      error: `Neither the ngx-prefetch task nor targetBuild ${options.targetBuild} provide an 'outputPath' option.`
     };
   }
 
-  /** Path to the build output folder */
-  const prodBuildOutputPath = targetBuildOptions.outputPath;
 
   context.reportProgress(1, STEP_NUMBER, 'Read ngsw.json');
   let swJsonString;
@@ -78,7 +104,7 @@ export default createBuilder<PrefetchBuilderSchema>(async (options, context): Pr
   } catch (error: any) {
     return {
       success: false,
-      error
+      error: error.message
     }
   }
   const swJson = JSON.parse(swJsonString);
@@ -108,13 +134,13 @@ export default createBuilder<PrefetchBuilderSchema>(async (options, context): Pr
 
   context.reportProgress(4, STEP_NUMBER, 'Webpack');
   const compiler = webpack({
-    mode: options.production ? "production" : "none",
+    mode: options.production ? 'production' : 'none',
     entry: tempOutputPath,
     output: {
       path: path.join(process.cwd(), prodBuildOutputPath),
       filename: 'ngxPrefetch.js'
     },
-    devtool: options.production ? "source-map" : false
+    devtool: options.production ? 'source-map' : false
   });
   return new Promise((resolve) => {
     compiler.run((err, stats) => {

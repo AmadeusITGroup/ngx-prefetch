@@ -50,6 +50,11 @@
           }
         },
         "additionalProperties": false
+      },
+      "outputPath": {
+        "type": "string",
+        "description": "Path to the folder of ngsw.json in the production build output.",
+        "default": ""
       }
     },
     "additionalProperties": false,
