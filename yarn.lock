@@ -1006,7 +1006,6 @@ __metadata:
     "@angular-devkit/core": ~17.0.0
     "@angular-devkit/schematics": ~17.0.0
     "@angular/cli": ~17.0.0
-    "@o3r/schematics": ^10.0.0-prerelease.61
     "@schematics/angular": ~17.0.0
     "@types/jest": ^29.5.11
     "@types/mustache": ^4.2.5
@@ -1020,44 +1019,11 @@ __metadata:
     rimraf: ^5.0.5
     rxjs: ^7.8.1
     ts-jest: ^29.1.1
+    type-fest: ^4.10.2
     typescript: ~5.3.0
     webpack: ^5.89.0
   languageName: unknown
   linkType: soft
-
-"@o3r/schematics@npm:^10.0.0-prerelease.61":
-  version: 10.0.0-prerelease.61
-  resolution: "@o3r/schematics@npm:10.0.0-prerelease.61"
-  dependencies:
-    chalk: ^4.1.2
-    globby: ^11.1.0
-    minimatch: ~9.0.3
-    semver: ^7.5.2
-    tslib: ^2.5.3
-  peerDependencies:
-    "@angular-devkit/architect": ~0.1700.0
-    "@angular-devkit/core": ~17.0.0
-    "@angular-devkit/schematics": ~17.0.0
-    "@angular/cli": ~17.0.0
-    "@o3r/telemetry": ^10.0.0-prerelease.61
-    "@schematics/angular": ~17.0.0
-    eslint: ^8.42.0
-    rxjs: ^7.8.1
-    typescript: ~5.2.2
-  peerDependenciesMeta:
-    "@angular-devkit/architect":
-      optional: true
-    "@angular-devkit/core":
-      optional: true
-    "@o3r/telemetry":
-      optional: true
-    eslint:
-      optional: true
-  bin:
-    environment: src/cli/environment.js
-  checksum: 74ffb5062dd7e742fc784a0977d929ea2518f768b0e742145ef2fb0c5c30fc18fa18104b964fd0ff45fe4cefd66f5ef33e6b1b896ab3845320e752bd04b55a49
-  languageName: node
-  linkType: hard
 
 "@pkgjs/parseargs@npm:^0.11.0":
   version: 0.11.0
@@ -2094,7 +2060,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:^4.0.0, chalk@npm:^4.1.0, chalk@npm:^4.1.2":
+"chalk@npm:^4.0.0, chalk@npm:^4.1.0":
   version: 4.1.2
   resolution: "chalk@npm:4.1.2"
   dependencies:
@@ -4292,7 +4258,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:9.0.3, minimatch@npm:^9.0.0, minimatch@npm:^9.0.1, minimatch@npm:^9.0.3, minimatch@npm:~9.0.3":
+"minimatch@npm:9.0.3, minimatch@npm:^9.0.0, minimatch@npm:^9.0.1, minimatch@npm:^9.0.3":
   version: 9.0.3
   resolution: "minimatch@npm:9.0.3"
   dependencies:
@@ -5218,7 +5184,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.5.4, semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.3.5, semver@npm:^7.5.2, semver@npm:^7.5.3, semver@npm:^7.5.4":
+"semver@npm:7.5.4, semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.3.5, semver@npm:^7.5.3, semver@npm:^7.5.4":
   version: 7.5.4
   resolution: "semver@npm:7.5.4"
   dependencies:
@@ -5735,7 +5701,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.1.0, tslib@npm:^2.5.3":
+"tslib@npm:^2.1.0":
   version: 2.6.2
   resolution: "tslib@npm:2.6.2"
   checksum: 329ea56123005922f39642318e3d1f0f8265d1e7fcb92c633e0809521da75eeaca28d2cf96d7248229deb40e5c19adf408259f4b9640afd20d13aecc1430f3ad
@@ -5780,6 +5746,13 @@ __metadata:
   version: 0.21.3
   resolution: "type-fest@npm:0.21.3"
   checksum: e6b32a3b3877f04339bae01c193b273c62ba7bfc9e325b8703c4ee1b32dc8fe4ef5dfa54bf78265e069f7667d058e360ae0f37be5af9f153b22382cd55a9afe0
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^4.10.2":
+  version: 4.10.2
+  resolution: "type-fest@npm:4.10.2"
+  checksum: ef75736d51c10a885f955c07aed8f46103a8c9ae93742a75fbbdf023dd0e7169c524ebef292f37de19806051fb1bdd96c4098a0101c5f869f80db73bcb484bb1
   languageName: node
   linkType: hard
 
