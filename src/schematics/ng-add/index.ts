@@ -1,7 +1,19 @@
 import { NgAddSchematicsSchema } from './schema';
 import { chain, Rule, SchematicContext, SchematicsException, Tree } from '@angular-devkit/schematics';
-import { getWorkspaceConfig, readPackageJson } from '@o3r/schematics';
-import type { WorkspaceSchema } from '@o3r/schematics';
+import type { PackageJson } from 'type-fest';
+
+interface WorkspaceProject {
+  root: string;
+  architect?: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [k: string]: any
+  };
+}
+interface WorkspaceSchema {
+  projects: {
+    [k: string]: WorkspaceProject;
+  };
+}
 
 function getFinalProjectName(workspace: WorkspaceSchema, projectName: string) {
   if (projectName) return projectName;
@@ -17,12 +29,23 @@ function getFinalProjectName(workspace: WorkspaceSchema, projectName: string) {
  */
 function updatePrefetchBuilder(options: NgAddSchematicsSchema): Rule {
   return (tree: Tree, context: SchematicContext) => {
+    let workspace;
+    try {
+      workspace = tree.readJson('/angular.json') as unknown as WorkspaceSchema;
+    } catch (e) {
+      throw new SchematicsException('Could not parse /angular.json');
+    }
 
-    const workspace = getWorkspaceConfig(tree);
     const projectName = getFinalProjectName(workspace, options.projectName);
 
     const workspaceProject = workspace.projects[projectName];
-    const packageJson = readPackageJson(tree, workspaceProject);
+
+    const packageJsonPath = `${workspaceProject.root}/package.json`;
+    if (!tree.exists(packageJsonPath)) {
+      throw new SchematicsException('Could not find package.json');
+    }
+
+    const packageJson = tree.readJson(packageJsonPath) as PackageJson;
 
     packageJson.scripts ||= {};
 
@@ -40,7 +63,7 @@ function updatePrefetchBuilder(options: NgAddSchematicsSchema): Rule {
     };
 
     if (!tree.exists('/ngsw-config.json')) {
-      context.logger.warn('Run `yarn ng add @angular/pwa` to setup Service Worker prefetch. This is a mandatory step for prefetch capability.');
+      context.logger.warn('Run `ng add @angular/pwa` to setup Angular Service Worker. This is a mandatory package for the ngx-prefetch library.');
     }
 
     workspace.projects[projectName] = workspaceProject;
