@@ -98,6 +98,8 @@ Please refer to the details on how the ngx-prefetch works [here](docs/HOW_IT_WOR
   for the default locale `*` will be searched for. If none of these are found within the dynamic content files, the localization file will not be prefetched.
   You can find a detailed example [below](README.md#example-of-fallback-locale).
 
+  - `outputPath` Path to the folder of `ngsw.json` in the production build output. If not defined, will try to compute it from the executor options.
+
 ### Example of full configuration
 
 [`angular.json`: full configuration]
@@ -118,6 +120,7 @@ Please refer to the details on how the ngx-prefetch works [here](docs/HOW_IT_WOR
         "production": false,
         "staticsFullPath": "https://my-web-app.com/path/to/my-app/",
         "localizationPattern": "localizations/${language}.json",
+        "outputPath": "dist",
         "fallbackLocalesMap": {
             "fr-CA": "fr-FR",
             "de": "de-DE",
