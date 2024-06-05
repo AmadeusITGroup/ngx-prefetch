@@ -25,7 +25,7 @@ test.describe('My app', () => {
     await page.waitForURL('http://localhost:8080/prefetch.html', {
       waitUntil: 'networkidle'
     });
-    await expect(page.locator('link')).toHaveCount(15);
+    await expect(page.locator('link')).toHaveCount(14);
     await client.send('Network.emulateNetworkConditions', badNetworkConditions);
     const [request] = await Promise.all([
       page.waitForEvent('requestfinished'),
