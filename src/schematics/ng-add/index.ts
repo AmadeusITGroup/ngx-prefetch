@@ -33,7 +33,7 @@ function updatePrefetchBuilder(options: NgAddSchematicsSchema): Rule {
     try {
       workspace = tree.readJson('/angular.json') as unknown as WorkspaceSchema;
     } catch (e) {
-      throw new SchematicsException('Could not parse /angular.json');
+      throw new SchematicsException(`Could not parse /angular.json. ${e}`);
     }
 
     const projectName = getFinalProjectName(workspace, options.projectName);
