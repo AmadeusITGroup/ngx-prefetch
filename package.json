@@ -35,15 +35,15 @@
   "homepage": "https://github.com/AmadeusITGroup/ngx-prefetch#readme",
   "dependencies": {
     "@angular-devkit/architect": "~0.1800.2",
-    "@angular-devkit/core": "~18.0.2",
+    "@angular-devkit/core": "~19.0.0",
     "mustache": "^4.2.0",
     "typescript": "~5.4.5",
     "webpack": "^5.91.0"
   },
   "devDependencies": {
-    "@angular-devkit/schematics": "~18.0.2",
-    "@angular/cli": "~18.0.2",
-    "@schematics/angular": "~18.0.2",
+    "@angular-devkit/schematics": "~19.0.0",
+    "@angular/cli": "~19.0.0",
+    "@schematics/angular": "~19.0.0",
     "@types/jest": "^29.5.12",
     "@types/mustache": "^4.2.5",
     "@types/node": "^20.14.2",
