@@ -1,5 +1,6 @@
 {
     "extends": "../tsconfig",
+    "types": ["node", "jest"],
     "include": [
       "./**/*.spec.ts"
     ]
