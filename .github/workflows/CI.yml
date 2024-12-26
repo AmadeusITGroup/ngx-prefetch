@@ -8,7 +8,18 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Start Measurement
+        uses: green-coding-solutions/eco-ci-energy-estimation@v4 
+        with:
+          task: start-measurement
+        continue-on-error: true
       - uses: actions/checkout@v4
+      - name: Checkout Repo Measurement
+        uses: green-coding-solutions/eco-ci-energy-estimation@v4
+        with:
+          task: get-measurement
+          label: 'repo checkout'
+        continue-on-error: true
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -25,12 +36,30 @@ jobs:
             ${{ runner.os }}-
       - name: Install
         run: yarn --immutable
+      - name: Setup and install Measurment
+        uses: green-coding-solutions/eco-ci-energy-estimation@v4
+        with:
+          task: get-measurement
+          label: 'setup-and-install'
+        continue-on-error: true
       - name: Build
         run: yarn build
+      - name: Build Measurment
+        uses: green-coding-solutions/eco-ci-energy-estimation@v4
+        with:
+          task: get-measurement
+          label: 'build'
+        continue-on-error: true
       - name: Unit Tests
         run: yarn test
       - name: Lint
         run: yarn lint
+      - name: Test and Lint Measurment
+        uses: green-coding-solutions/eco-ci-energy-estimation@v4
+        with:
+          task: get-measurement
+          label: 'test-and-lint'
+        continue-on-error: true
       - name: Install, build and start demo app
         run: |
           cd examples/my-ngsw-app
@@ -41,3 +70,14 @@ jobs:
           cd examples/my-ngsw-app
           npx playwright install chromium
           npm run test:e2e
+      - name: E2E tests Measurment
+        uses: green-coding-solutions/eco-ci-energy-estimation@v4
+        with:
+          task: get-measurement
+          label: 'e2e-test'
+        continue-on-error: true
+      - name: Show Energy Results
+        uses: green-coding-solutions/eco-ci-energy-estimation@v4
+        with:
+          task: display-results
+        continue-on-error: true 
