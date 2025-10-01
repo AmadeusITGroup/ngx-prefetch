@@ -37,7 +37,7 @@
     "@angular-devkit/architect": "~0.2000.3",
     "@angular-devkit/core": "~20.0.3",
     "mustache": "^4.2.0",
-    "typescript": "~5.8.3",
+    "typescript": "~5.9.0",
     "webpack": "^5.91.0"
   },
   "devDependencies": {
