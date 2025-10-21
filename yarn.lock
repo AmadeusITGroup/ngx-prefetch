@@ -948,7 +948,7 @@ __metadata:
     mustache: ^4.2.0
     rimraf: ^6.0.0
     ts-jest: ^29.1.1
-    type-fest: ^4.19.0
+    type-fest: ^5.0.0
     typescript: ~5.9.0
     typescript-eslint: ^8.10.0
     webpack: ^5.91.0
@@ -5078,6 +5078,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tagged-tag@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "tagged-tag@npm:1.0.0"
+  checksum: e37653df3e495daa7ea7790cb161b810b00075bba2e4d6c93fb06a709e747e3ae9da11a120d0489833203926511b39e038a2affbd9d279cfb7a2f3fcccd30b5d
+  languageName: node
+  linkType: hard
+
 "tapable@npm:^2.1.1, tapable@npm:^2.2.0":
   version: 2.2.1
   resolution: "tapable@npm:2.2.1"
@@ -5258,10 +5265,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^4.19.0":
-  version: 4.19.0
-  resolution: "type-fest@npm:4.19.0"
-  checksum: 04cc30faca153917fe335dbeaff05c1c2a165a3fe72134a1dfd7eec1bb625414f3dcabaf26b7d49deba91436ae7c4eb4c05f8df9c68b11ede6ae4bbca1972f1a
+"type-fest@npm:^5.0.0":
+  version: 5.1.0
+  resolution: "type-fest@npm:5.1.0"
+  dependencies:
+    tagged-tag: ^1.0.0
+  checksum: e9c7f22ee538fbda75e0313caac9a9202b46346b7d5750e9715309c85702869b7f98d0cd4f17c9edf09e41d5338653885eac6b4bff98d65d6dd64b5c13093a9b
   languageName: node
   linkType: hard
 
