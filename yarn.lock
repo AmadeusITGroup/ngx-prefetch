@@ -939,7 +939,7 @@ __metadata:
     "@eslint/js": ^9.12.0
     "@types/jest": ^29.5.12
     "@types/mustache": ^4.2.6
-    "@types/node": ^20.14.2
+    "@types/node": ^22.0.0
     copyfiles: ^2.4.1
     eslint: ^9.12.0
     globals: ^16.0.0
@@ -1122,12 +1122,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.14.2":
-  version: 20.14.2
-  resolution: "@types/node@npm:20.14.2"
+"@types/node@npm:^22.0.0":
+  version: 22.18.12
+  resolution: "@types/node@npm:22.18.12"
   dependencies:
-    undici-types: ~5.26.4
-  checksum: 265362479b8f3b50fcd1e3f9e9af6121feb01a478dff0335ae67cccc3babfe45d0f12209d3d350595eebd7e67471762697b877c380513f8e5d27a238fa50c805
+    undici-types: ~6.21.0
+  checksum: f39098a09dff1df8ca4892ffcf810889b79f31f9585f7a8f27e3d047126cebc9b9fa9954b21215cc45a9793198895e81852067b019d89e03825d4f57310aa3c9
   languageName: node
   linkType: hard
 
@@ -5303,6 +5303,13 @@ __metadata:
   version: 5.26.5
   resolution: "undici-types@npm:5.26.5"
   checksum: 3192ef6f3fd5df652f2dc1cd782b49d6ff14dc98e5dced492aa8a8c65425227da5da6aafe22523c67f035a272c599bb89cfe803c1db6311e44bed3042fc25487
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.21.0":
+  version: 6.21.0
+  resolution: "undici-types@npm:6.21.0"
+  checksum: 46331c7d6016bf85b3e8f20c159d62f5ae471aba1eb3dc52fff35a0259d58dcc7d592d4cc4f00c5f9243fa738a11cfa48bd20203040d4a9e6bc25e807fab7ab3
   languageName: node
   linkType: hard
 
