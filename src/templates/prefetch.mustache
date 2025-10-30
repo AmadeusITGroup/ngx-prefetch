@@ -90,7 +90,7 @@
   resList.forEach(function(resource) {
     if (typeof resource === 'string') {
       var fullPath = staticsFullPath;
-      if (hasDynamicContent && dynamicContentFiles.includes(resource.slice(1))) {
+      if (hasDynamicContent && dynamicContentFiles.includes(resource.replace(/^\/+/, ''))) {
         fullPath = dynamicContentPath + '/';
       }
       var splitRes = resource.split('.');
