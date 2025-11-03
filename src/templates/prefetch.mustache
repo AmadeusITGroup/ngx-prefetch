@@ -22,6 +22,46 @@
     document.head.appendChild(res);
   }
 
+  function globToRegex(glob) {
+    var pattern = glob
+      .replace(/\./g, '\\.')
+      .replace(/\?/g, '.')
+      .replace(/\*\*\//g, '___DOUBLESTAR_SLASH___')
+      .replace(/\/\*\*/g, '___SLASH_DOUBLESTAR___')
+      .replace(/\*\*/g, '___DOUBLESTAR___')
+      .replace(/\*/g, '[^/]*');
+    
+    pattern = pattern
+      .replace(/___DOUBLESTAR_SLASH___/g, '(.*/)?')
+      .replace(/___SLASH_DOUBLESTAR___/g, '(/.*)?')
+      .replace(/___DOUBLESTAR___/g, '.*');
+    
+    return new RegExp('^' + pattern + '$');
+  }
+
+  function matchesGlob(filePath, globs) {
+    if (!Array.isArray(globs) || globs.length === 0) {
+      return false;
+    }
+    
+    for (var i = 0; i < globs.length; i++) {
+      var pattern = globs[i];
+      var isNegation = pattern.charAt(0) === '!';
+      var actualPattern = isNegation ? pattern.slice(1) : pattern;
+      var regex = globToRegex(actualPattern);
+      var matches = regex.test(filePath);
+      
+      if (isNegation && matches) {
+        return false;
+      }
+      if (!isNegation && matches) {
+        return true;
+      }
+    }
+    
+    return false;
+  }
+
   function addLocalizationFile(locPattern) {
     if (dynamicContentFiles.includes(locPattern)) {
       resList.push(locPattern);
@@ -84,6 +124,29 @@
       }
     } else {
       resList.push(`/{{{localizationPattern}}}`);
+    }
+  }
+
+  if (hasDynamicContent && dynamicContentFiles && prefetchConfig.dynamicContentGlobs && prefetchConfig.dynamicContentGlobs.length > 0) {
+    var processedFiles = {};
+    
+    resList.forEach(function(resource) {
+      if (typeof resource === 'string') {
+        processedFiles[resource.replace(/^\/+/, '')] = true;
+      }
+    });
+    
+    for (var globIndex = 0; globIndex < prefetchConfig.dynamicContentGlobs.length; globIndex++) {
+      var globPattern = prefetchConfig.dynamicContentGlobs[globIndex];
+      
+      for (var fileIndex = 0; fileIndex < dynamicContentFiles.length; fileIndex++) {
+        var file = dynamicContentFiles[fileIndex];
+        
+        if (!processedFiles[file] && matchesGlob(file, [globPattern])) {
+          resList.push('/' + file);
+          processedFiles[file] = true;
+        }
+      }
     }
   }
 
