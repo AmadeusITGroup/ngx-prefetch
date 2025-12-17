@@ -1,5 +1,5 @@
-import {filterOptions, getResArray} from '../src';
-import {lazyAndPrefetchAssetGroups, prefetchInputAssetGroup} from './mocks';
+import { filterOptions, getResArray } from '../src';
+import { lazyAndPrefetchAssetGroups, prefetchInputAssetGroup } from './mocks';
 
 describe('Prefetch builder', () => {
   describe('getResArray', () => {
@@ -45,11 +45,11 @@ describe('Prefetch builder', () => {
       const inputOptions = {
         targetBuild: 'my-ngsw-app:build:production',
         resourceTypes: {
-          image: [ 'png', 'jpg', 'gif' ],
-          font: [ 'eot', 'ttf', 'woff', 'woff2', 'svg' ],
-          style: [ 'css' ],
-          script: [ 'js' ],
-          document: [ 'html' ]
+          image: ['png', 'jpg', 'gif'],
+          font: ['eot', 'ttf', 'woff', 'woff2', 'svg'],
+          style: ['css'],
+          script: ['js'],
+          document: ['html']
         },
         crossorigin: true,
         production: true,
@@ -59,11 +59,11 @@ describe('Prefetch builder', () => {
 
       const expectedBuilderConfig = {
         resourceTypes: {
-          image: [ 'png', 'jpg', 'gif' ],
-          font: [ 'eot', 'ttf', 'woff', 'woff2', 'svg' ],
-          style: [ 'css' ],
-          script: [ 'js' ],
-          document: [ 'html' ]
+          image: ['png', 'jpg', 'gif'],
+          font: ['eot', 'ttf', 'woff', 'woff2', 'svg'],
+          style: ['css'],
+          script: ['js'],
+          document: ['html']
         },
         crossorigin: true
       };

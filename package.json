@@ -7,7 +7,8 @@
     "build": "tsc -p ./tsconfig.json && copyfiles src/schema.json ./dist --up 1 && copyfiles src/templates/* ./dist --up 1 && copyfiles src/schematics/ng-add/schema.json ./dist --up 1",
     "test": "jest",
     "lint": "eslint ./src",
-    "clean": "rimraf ./dist"
+    "clean": "rimraf ./dist",
+    "e2e": "npm run build && npm --prefix examples/my-ngsw-app install && npm --prefix examples/my-ngsw-app run build:prod && npm --prefix examples/my-ngsw-app run test:e2e"
   },
   "repository": {
     "type": "git",
