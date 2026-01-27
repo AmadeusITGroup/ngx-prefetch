@@ -942,7 +942,7 @@ __metadata:
     "@types/node": ^20.14.2
     copyfiles: ^2.4.1
     eslint: ^9.12.0
-    globals: ^16.0.0
+    globals: ^17.0.0
     jest: ^29.7.0
     knip: ^5.0.1
     mustache: ^4.2.0
@@ -2799,10 +2799,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globals@npm:^16.0.0":
-  version: 16.0.0
-  resolution: "globals@npm:16.0.0"
-  checksum: 41df1cb6f86c36dfdf8fb6c270247105c85cc3aec8d8238c5e691b0d2aad9eed8ff390d1035f4b5a27ee24bf75b095c7b84717e9d2050d2122e61f37d9c6131a
+"globals@npm:^17.0.0":
+  version: 17.2.0
+  resolution: "globals@npm:17.2.0"
+  checksum: 6b953720052cfe1cb14c15f6f0c12ee21661409f524ff8816d26031faad31e93f978259de6fc828af428758709063bff3ae382e217d7edaa0103bbca2c221a31
   languageName: node
   linkType: hard
 
