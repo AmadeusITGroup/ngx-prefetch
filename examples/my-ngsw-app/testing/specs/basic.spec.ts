@@ -35,7 +35,7 @@ test.describe('My app', () => {
     expect(await page.innerText('title')).toBe('MyNgswApp');
     console.log('prefetch', request.timing());
     prefetchLoadDuration = request.timing().responseEnd - request.timing().requestStart;
-    client.detach();
+    await client.detach();
   });
 
   test('takes a while to load on bad network', async ({ page }) => {
@@ -50,6 +50,6 @@ test.describe('My app', () => {
     expect(await page.innerText('title')).toBe('MyNgswApp');
     console.log('direct load', request.timing());
     expect(request.timing().responseEnd - request.timing().requestStart).toBeGreaterThan(prefetchLoadDuration);
-    client.detach();
+    await client.detach();
   });
 });
