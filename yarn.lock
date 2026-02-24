@@ -1005,7 +1005,7 @@ __metadata:
     "@types/node": "npm:^22.10.5"
     copyfiles: "npm:^2.4.1"
     eslint: "npm:^9.18.0"
-    globals: "npm:^16.0.0"
+    globals: "npm:^17.0.0"
     jest: "npm:^29.7.0"
     knip: "npm:^5.45.3"
     mustache: "npm:^4.2.0"
@@ -3120,10 +3120,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globals@npm:^16.0.0":
-  version: 16.0.0
-  resolution: "globals@npm:16.0.0"
-  checksum: 10c0/8906d5f01838df64a81d6c2a7b7214312e2216cf65c5ed1546dc9a7d0febddf55ffa906cf04efd5b01eec2534d6f14859a89535d1a68241832810e41ef3fd5bb
+"globals@npm:^17.0.0":
+  version: 17.3.0
+  resolution: "globals@npm:17.3.0"
+  checksum: 10c0/7f21443ecaa60c6e9ff56d9fb6f10a9b5f9514e7f22e5392f715472bb220ce31c865ebf414a32695150e733fb3e1013e6322dbce70fddd1e066f372b8d55a4b8
   languageName: node
   linkType: hard
 
