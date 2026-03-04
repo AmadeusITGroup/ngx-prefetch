@@ -100,6 +100,16 @@ Please refer to the details on how the ngx-prefetch works [here](docs/HOW_IT_WOR
 
   - `outputPath` Path to the folder of `ngsw.json` in the production build output. If not defined, will try to compute it from the executor options.
 
+  - `dynamicContentGlobs`: globs for matching files from dynamic content. Example:
+  ```json
+  [
+  "*.json",                        // All JSON files at root
+  "assets/data/**/*.json",         // All JSON files under assets/data
+  "functional-contents/*.json",    // All JSON in functional-contents
+  "!assets/README.md"              // Exclude README
+  ]
+  ```
+
 ### Example of full configuration
 
 [`angular.json`: full configuration]
@@ -125,7 +135,13 @@ Please refer to the details on how the ngx-prefetch works [here](docs/HOW_IT_WOR
             "fr-CA": "fr-FR",
             "de": "de-DE",
             "*": "en-GB"
-        }
+        },
+        "dynamicContentGlobs": [
+            "*.json",                        // All JSON files at root
+            "assets/data/**/*.json",         // All JSON files under assets/data
+            "functional-contents/*.json",    // All JSON in functional-contents
+            "!assets/README.md"              // Exclude README
+        ]
     }
 }
 ```
