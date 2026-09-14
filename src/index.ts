@@ -2,8 +2,8 @@ import type {BuilderOutput, Target} from '@angular-devkit/architect';
 import {createBuilder} from '@angular-devkit/architect';
 import * as fs from 'fs';
 import * as path from 'path';
-import * as webpack from 'webpack';
-import * as Mustache from 'mustache';
+import webpack from 'webpack';
+import Mustache from 'mustache';
 
 import {PrefetchBuilderSchema} from './schema';
 
@@ -143,12 +143,12 @@ export default createBuilder<PrefetchBuilderSchema>(async (options, context): Pr
     devtool: options.production ? 'source-map' : false
   });
   return new Promise((resolve) => {
-    compiler.run((err, stats) => {
+    compiler.run((err: Error | null | undefined, stats: webpack.Stats | undefined) => {
       fs.unlinkSync(tempOutputPath);
-      if (err || stats.hasErrors()) {
+      if (err || stats?.hasErrors()) {
         resolve({
           success: false,
-          error: `Webpack transpilation failed. ${err || stats.hasErrors()}`
+          error: `Webpack transpilation failed. ${err || stats?.hasErrors()}`
         });
       } else {
         resolve({
