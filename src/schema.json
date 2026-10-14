@@ -55,6 +55,13 @@
         "type": "string",
         "description": "Path to the folder of ngsw.json in the production build output.",
         "default": ""
+      },
+      "dynamicContentGlobs": {
+        "type": "array",
+        "description": "Array of globs for matching files from dynamic content",
+        "items": {
+          "type": "string"
+        }
       }
     },
     "additionalProperties": false,
